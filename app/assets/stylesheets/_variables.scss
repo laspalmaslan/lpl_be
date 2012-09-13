@@ -1,4 +1,11 @@
-// Global values
+// Variables to customize the look and feel of Bootstrap
+// Swatch: Cyborg
+// Version: 2.0.2
+// -----------------------------------------------------
+
+
+
+// GLOBAL VALUES
 // --------------------------------------------------
 
 
@@ -39,14 +46,10 @@ $linkColorHover:        $white;
 
 // Typography
 // -------------------------
-$sansFontFamily:        'Droid Sans', sans-serif;
-$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
-$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
-
-$baseFontSize:          14px;
-$baseFontFamily:        $sansFontFamily;
-$baseLineHeight:        20px;
-$altFontFamily:         $serifFontFamily;
+$baseFontSize:          13px;
+$baseFontFamily:        'Droid Sans', sans-serif;
+$baseLineHeight:        18px;
+$altFontFamily:         Georgia, "Times New Roman", Times, serif;
 
 $headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
 $headingsFontWeight:    normal;    // instead of browser default, bold
@@ -63,51 +66,44 @@ $tableBorder:                       #222; // table and cell border
 
 // Buttons
 // -------------------------
-$btnBackground:                     darken($gray, 20%);
-$btnBackgroundHighlight:            darken($gray, 25%);
+$btnBackground:                     $white;
+$btnBackgroundHighlight:            darken($white, 10%);
 $btnBorder:                         rgba(0, 0, 0, 0);
 
 $btnPrimaryBackground:              $blueDark;
 $btnPrimaryBackgroundHighlight:     darken($blueDark, 10%);
 
-$btnInfoBackground:                 darken($gray, 40%);
-$btnInfoBackgroundHighlight:        darken($gray, 50%);
+$btnInfoBackground:                 #5bc0de;
+$btnInfoBackgroundHighlight:        #2f96b4;
 
-$btnSuccessBackground:              lighten($green, 10%);
-$btnSuccessBackgroundHighlight:     $green;
+$btnSuccessBackground:              #62c462;
+$btnSuccessBackgroundHighlight:     #51a351;
 
 $btnWarningBackground:              lighten($orange, 15%);
 $btnWarningBackgroundHighlight:     $orange;
 
-$btnDangerBackground:               lighten($red, 10%);
-$btnDangerBackgroundHighlight:      $red;
+$btnDangerBackground:               #ee5f5b;
+$btnDangerBackgroundHighlight:      #bd362f;
 
-$btnInverseBackground:              lighten($purple, 5%);
-$btnInverseBackgroundHighlight:     $purple;
+$btnInverseBackground:              $gray;
+$btnInverseBackgroundHighlight:     $grayDarker;
 
 
 // Forms
 // -------------------------
 $inputBackground:               #ccc;
 $inputBorder:                   #bbb;
-$inputBorderRadius:             3px;
 $inputDisabledBackground:       $grayLighter;
-$formActionsBackground:         transparent;
+
 
 // Dropdowns
 // -------------------------
 $dropdownBackground:            $white;
 $dropdownBorder:                rgba(0,0,0,.2);
-$dropdownDividerTop:            transparent;
-$dropdownDividerBottom:         #222;
-
 $dropdownLinkColor:             $textColor;
-
 $dropdownLinkColorHover:        $white;
 $dropdownLinkBackgroundHover:   $linkColor;
 
-$dropdownLinkColorActive:       $dropdownLinkColor;
-$dropdownLinkBackgroundActive:  $linkColor;
 
 
 
@@ -126,12 +122,6 @@ $zindexModalBackdrop:     1040;
 $zindexModal:             1050;
 
 
-// Sprite icons path
-// -------------------------
-$iconSpritePath:          "../img/glyphicons-halflings.png";
-$iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
-
-
 // Input placeholder text color
 // -------------------------
 $placeholderText:         $grayLight;
@@ -142,19 +132,11 @@ $placeholderText:         $grayLight;
 $hrBorder:                $gray;
 
 
-// Wells
-// -------------------------
-$wellBackground:                  #131517;
-
-
 // Navbar
 // -------------------------
-$navbarCollapseWidth:             979px;
-
 $navbarHeight:                    40px;
 $navbarBackground:                $grayDarker;
 $navbarBackgroundHighlight:       $grayDarker;
-$navbarBorder:                    darken($navbarBackground, 12%);
 
 $navbarText:                      $grayLight;
 $navbarLinkColor:                 $grayLight;
@@ -163,38 +145,15 @@ $navbarLinkColorActive:           $navbarLinkColorHover;
 $navbarLinkBackgroundHover:       transparent;
 $navbarLinkBackgroundActive:      $navbarBackground;
 
-$navbarBrandColor:                $navbarLinkColor;
-
-// Inverted navbar
-$navbarInverseBackground:                #252A30;
-$navbarInverseBackgroundHighlight:       #252A30;
-$navbarInverseBorder:                    transparent;
-
-$navbarInverseText:                      $grayLighter;
-$navbarInverseLinkColor:                 $grayLighter;
-$navbarInverseLinkColorHover:            $white;
-$navbarInverseLinkColorActive:           $navbarInverseLinkColorHover;
-$navbarInverseLinkBackgroundHover:       $black;
-$navbarInverseLinkBackgroundActive:      $navbarInverseLinkBackgroundHover;
-
-$navbarInverseSearchBackground:          lighten($navbarInverseBackground, 25%);
-$navbarInverseSearchBackgroundFocus:     $white;
-$navbarInverseSearchBorder:              $navbarInverseBackground;
-$navbarInverseSearchPlaceholderColor:    $white;
-
-$navbarInverseBrandColor:                $navbarInverseLinkColor;
-
-
-// Pagination
-// -------------------------
-$paginationBackground:                $bodyBackground;
-$paginationBorder:                    #ddd;
-$paginationActiveBackground:          $blue;
+$navbarSearchBackground:          lighten($navbarBackground, 25%);
+$navbarSearchBackgroundFocus:     $white;
+$navbarSearchBorder:              darken($navbarSearchBackground, 30%);
+$navbarSearchPlaceholderColor:    #ccc;
 
 
 // Hero unit
 // -------------------------
-$heroUnitBackground:              #131517;
+$heroUnitBackground:              rgba(40, 40, 40, 0.5);
 $heroUnitHeadingColor:            inherit;
 $heroUnitLeadColor:               inherit;
 
@@ -207,29 +166,31 @@ $warningBorder:           transparent;
 
 $errorText:               #b94a48;
 $errorBackground:         $grayLighter;
-$errorBorder:             darken($errorBackground, 3%);
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
 
 $successText:             #468847;
 $successBackground:       $grayLighter;
-$successBorder:           darken($successBackground, 5%);
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%);
 
 $infoText:                $blueDark;
 $infoBackground:          $grayLighter;
-$infoBorder:              darken($infoBackground, 7%);
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
 
 
-// Tooltips and popovers
+
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
 // -------------------------
-$tooltipColor:            #fff;
-$tooltipBackground:       #000;
-$tooltipArrowWidth:       5px;
-$tooltipArrowColor:       $tooltipBackground;
+$gridColumns:             12;
+$gridColumnWidth:         60px;
+$gridGutterWidth:         20px;
+$gridRowWidth:            ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1));
 
-$popoverBackground:       #fff;
-$popoverArrowWidth:       10px;
-$popoverArrowColor:       #fff;
-$popoverTitleBackground:  darken($popoverBackground, 3%);
 
-// Special enhancement for popovers
-$popoverArrowOuterWidth:  $popoverArrowWidth + 1;
-$popoverArrowOuterColor:  rgba(0,0,0,.25);
+// Fluid grid
+// -------------------------
+$fluidGridColumnWidth:    6.382978723%;
+$fluidGridGutterWidth:    2.127659574%;
