@@ -47,6 +47,7 @@ gem "paperclip"
 
 group :development, :test do
   # To use debugger
+  gem 'sqlite3'
   gem "debugger"
 end
   
