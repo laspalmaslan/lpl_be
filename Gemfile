@@ -41,7 +41,7 @@ gem "haml-rails"
 #forms engine
 gem "simple_form"
 #javascript text editor
-gem "ckeditor" 
+gem "ckeditor", "3.7.1"
 #upload files
 gem "paperclip"
 
