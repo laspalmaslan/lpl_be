@@ -3,3 +3,102 @@
 @import "bootstrap";
 @import "bootswatch/cyborg/bootswatch";
 @import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Passion+One);
+
+//custom variables
+
+
+//custom mixins
+//auxiliar classes
+.well{
+  border-color:$blue;
+}
+//body
+body{
+  background:$black;
+}
+// header
+
+header{
+  height:230px;
+  border-bottom:2px solid $blue;
+    .well{
+      border-top:0;
+    }
+    #logo{
+      float:left;
+      font-family: 'Passion One', cursive; 
+      line-height: 40px;
+      font-size: 36px;
+      .title{
+        font-size: 130px;
+        line-height: 126px;
+        .l{
+          color: $white;
+        }
+        .p{
+          color: $blue;
+        }
+      }
+      .description{
+        .las{
+          color: $white;
+        }
+        .palmas{
+          color: $blue;
+        }
+        .lan{
+          color: $white;
+        }
+      }
+    }
+  .nav{
+    margin-left: 100px;
+    margin-top: 50px;
+    li a{
+      background-color:$blue;
+      color:$white;
+      &:hover{
+        background-color:$white;
+        color:$blue;
+      }
+    }
+  }
+}
+
+//blog
+h1.well{
+  height:12px;
+  line-height:12px;
+  text-align: center;
+}
+article{
+  margin-top:20px;
+  font-size: 18px;
+  min-height: 200px;
+  header{
+    height: 40px;
+    line-height:30px;
+    border-bottom: 1px solid $blue;
+    .title{
+      font-size: 30px;
+      padding-bottom: 6px;
+      a:hover{
+        text-decoration:none;
+      }
+    }
+  }
+  section{
+    min-height: 120px;
+    margin-top: 15px;
+    overflow:hidden;
+    color:$white;
+  }
+  footer{
+    min-height: 40px;
+    margin-top:10px;
+    .read_more{
+      float:right;
+    }
+  }
+}

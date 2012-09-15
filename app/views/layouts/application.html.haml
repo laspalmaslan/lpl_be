@@ -5,4 +5,26 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      %header
+        #banner
+          #logo.well
+            .title
+              %span.l
+                l
+              %span.p
+                p
+              %span.l
+                l
+            .description
+              %span.las
+                las
+              %span.palmas
+                palmas
+              %span.lan
+                lan
+
+        %ul.nav.nav-pills.pull-left
+          %li
+            =link_to "Blog", posts_path 
+      = yield
