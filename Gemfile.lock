@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/liangwenke/social-share-button.git
+  revision: 3c4a41f05b2ccaa043ddd24f703fa3f35f3c8f50
+  specs:
+    social-share-button (0.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -223,5 +229,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   selenium-webdriver
   simple_form
+  social-share-button!
   sqlite3
   uglifier (>= 1.0.3)

@@ -2,9 +2,11 @@
 - @posts.each do |post|
   %article
     %header
-      .title
-        = link_to post.title, post
-      .social
+      .title.pull-left
+        %strong
+          = link_to post.title, post
+      .social.pull-right
+        = social_share_button_tag(post.title, link: post_url(post)) 
     %section
       = post.intro
     %footer

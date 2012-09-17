@@ -17,6 +17,7 @@ group :assets do
   gem 'font-awesome-sass-rails'
   gem 'bootswatch-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'social-share-button', git: 'git://github.com/liangwenke/social-share-button.git'
 end
 
 gem 'jquery-rails'

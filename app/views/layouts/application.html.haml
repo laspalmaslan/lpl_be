@@ -24,7 +24,23 @@
               %span.lan
                 lan
 
-        %ul.nav.nav-pills.pull-left
+        %ul.nav.pull-left
           %li
             =link_to "Blog", posts_path 
+
+        %ul.slide-control.pull-right
+          %li
+            %div.active 
+          %li
+            %div 
+          %li
+            %div 
+          %li
+            %div
+
+        .slide.slidei-1
+          %span.slide-title
+            Talleres
+          %span.slide-content
+            Ruby on rails, Máquinas virtuales, Cheff, Modelado 3d ...
       = yield
