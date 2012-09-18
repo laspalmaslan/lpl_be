@@ -24,7 +24,7 @@
               %span.lan
                 lan
 
-        %ul.nav.pull-left
+        %ul.nav.pull-left.well
           %li
             =link_to "Blog", posts_path 
 
@@ -38,9 +38,25 @@
           %li
             %div
 
-        .slide.slidei-1
+        .slide.active
           %span.slide-title
             Talleres
           %span.slide-content
             Ruby on rails, Máquinas virtuales, Cheff, Modelado 3d ...
+        .slide
+          %span.slide-title
+            Actividades
+          %span.slide-content
+            Ciencia fición, Paintball, Karting, Deportes extremos ...
+        .slide
+          %span.slide-title
+            Videojuegos
+          %span.slide-content
+            StarCraft2, Call of duty, Fifa2012, ESL España ...
+        .slide
+          %span.slide-title
+            Lan Party
+          %span.slide-content
+            Streaming, Modding, Torneos, Consolas ...
+
       = yield

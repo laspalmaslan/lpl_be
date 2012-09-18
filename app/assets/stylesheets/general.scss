@@ -6,8 +6,8 @@
 @import url(http://fonts.googleapis.com/css?family=Passion+One);
 
 //custom variables
-$gradient-on:#131517;;
-$gradient-off:$grayDarker;
+$gradient-off:#131517;;
+$gradient-on:$grayDarker;
 $box-background:$grayDarker;
 //custom mixins
 
@@ -23,25 +23,26 @@ $box-background:$grayDarker;
   line-height: 50px;
   &:hover{
     text-decoration:none;
+    background: $white;
+    color: $blue;
   }
 }
 
 @mixin box-style {
     padding-left: 3%;
     padding-right: 3%;
-    background-repeat: repeat-x;
+    background-repeat: repeat-y;
     background-color: $box-background;
-    position:relative;
+    position:absolute;
     overflow:hidden;
     @include background-image(linear-gradient(top, $gradient-on, $gradient-off));
     @include border-radius(0 0 8px 8px);
-    background-repeat:none;
     width:100%;
     height:100%;
     width: 94%;
     height: 100%;
     z-index: -1;
-    top: -225px;
+    left:0px;
   }
 
 //auxiliar classes
@@ -59,31 +60,15 @@ header{
   border-bottom:2px solid $blue;
   @include border-radius(0 0 8px 8px);
   position:relative;
-    .well{
-      border-top:0;
-    }
-    .slide{
-      @include box-style;
-    span{
-        color:$white;
-        float: left;
-        margin-left: 250px;
-      &.slide-title{
-        margin-top: 113px;
-        font-size: 62px;
-      }
-      &.slide-content{
-        margin-top: 38px;
-        font-size: 25px;
-      }
-    }
-    }
     #logo{
       float:left;
       font-family: 'Passion One', cursive; 
       line-height: 40px;
       font-size: 36px;
       @include border-radius(0 0 8px 8px);
+      &.well{
+        border-top:0;
+      }
       .title{
         font-size: 130px;
         line-height: 126px;
@@ -112,25 +97,25 @@ header{
         }
       }
     }
-    .nav{
-      width:700px;
+    .nav.well{
+      border-width: 2px 2px 2px 2px;
+      padding:0;
+      width:650px;
       height:40px;
-      @include border-radius(20px 0 0 20px);
-      background-color:$white;
+      @include border-radius(22px 22px 22px 22px);
       position:absolute;
       top: 38px;
       right:0px;
-      color:$blue;
       li{ 
         line-height: 40px;
         margin-left: 24px; 
         a{
           float:left;
           display:block;
-          font-size: 14px;
+          font-size: 18px;
           padding: 0 10px 0 10px;
           &:hover{
-            background-color:$gray;
+            background:transparent;
             color:$white;
           }
           &.active{
@@ -163,6 +148,26 @@ header{
           background-color:$blue;
           color:$blue;
         }
+      }
+    }
+  }
+  .slide{
+    @include box-style;
+    display:none;
+    &.active{
+      display:block;
+    }
+    span{
+      color:$white;
+      float: left;
+      margin-left: 250px;
+      &.slide-title{
+        margin-top: 113px;
+        font-size: 62px;
+      }
+      &.slide-content{
+        margin-top: 38px;
+        font-size: 25px;
       }
     }
   }
