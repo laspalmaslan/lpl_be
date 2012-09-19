@@ -8,7 +8,7 @@
       .social.pull-right
         = social_share_button_tag(post.title, link: post_url(post)) 
     %section
-      = post.intro
+      = post.intro.html_safe
     %footer
       .read_more
         = link_to 'Leer más >>', post

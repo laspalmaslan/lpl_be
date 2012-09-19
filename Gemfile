@@ -18,6 +18,8 @@ group :assets do
   gem 'bootswatch-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'social-share-button', git: 'git://github.com/liangwenke/social-share-button.git'
+  #javascript text editor
+  gem "ckeditor", "3.7.1"
 end
 
 gem 'jquery-rails'
@@ -41,8 +43,6 @@ gem "devise"
 gem "haml-rails"
 #forms engine
 gem "simple_form"
-#javascript text editor
-gem "ckeditor", "3.7.1"
 #upload files
 gem "paperclip"
 

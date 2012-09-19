@@ -1,14 +1,12 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Intro:
-  = @post.intro
-%p
-  %b Content:
-  = @post.content
+%article
+  %header
+    .title.pull-left
+      %strong
+        = @post.title
+    .social.pull-right
+      = social_share_button_tag(@post.title, link: post_url(@post)) 
+  %section
+    = @post.content.html_safe
 
 = link_to 'Edit', edit_post_path(@post)
 \|
