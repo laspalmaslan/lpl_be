@@ -1,11 +1,6 @@
-Lpl::Application.routes.draw do
-  get "index/new"
-
-  get "index/update"
-
-  get "index/delete"
-
-  get "index/edit"
+Lpl::Application.routes.draw do  
+  get "calendar/index"
+  root :to => 'calendar#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
