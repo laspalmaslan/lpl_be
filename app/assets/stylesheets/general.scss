@@ -1,5 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Contrail+One);
 @import "bourbon";
 @import "variables";
 @import "bootstrap";
 @import "bootswatch/cyborg/bootswatch";
 @import "font-awesome";
+
+//variables
+$font-title: 'Contrail One', cursive;
+
+//tabla
+table.mytable{
+  text-align: center;
+}
+
+
+//title
+.title{
+  text-align: center;
+  font-family: $font-title; 
+}

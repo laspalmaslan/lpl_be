@@ -1,12 +1,15 @@
-%h1 
-  CALENDAR
+%h1
+  .title  
+    CALENDAR
+%div.row-fluid.mycalendar
+  - @days.each do |day|
+    %ul
+      %li.cal_title
+        = day.date
+      - day.events.each do |event|
+        %li.myevent
+          = event.description
+          = event.event_time
 
-%table
-  %th lunes
-  %th martes
-  %th miercoles
-  %th jueves
-  %th viernes
-  %th sabado
-  %th domingo
 
+    
