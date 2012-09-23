@@ -1,0 +1,13 @@
+@import "bourbon";
+@import "bootstrap";
+@import "font-awesome";
+
+//overwrite bootstrap
+.navbar .container {
+  width: 940px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// general
+

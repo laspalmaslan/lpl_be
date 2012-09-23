@@ -1,17 +1,22 @@
-%h1.well Blog
-- @posts.each do |post|
-  %article
-    %header
-      .title.pull-left
-        %strong
-          = link_to post.title, post
-      .social.pull-right
-        = social_share_button_tag(post.title, link: post_url(post)) 
-    %section
-      = post.intro.html_safe
-    %footer
-      .read_more
-        = link_to 'Leer más >>', post
+%h1
+  %i.icon-list-alt
+  Posts
+.span10.offset1
+  %table.table.table-bordered.table-striped.table-hover
+    %tr
+      %th Título
+      %th Acciones
+
+      - @posts.each do |post|
+        %tr
+          %td= post.title
+          %td
+            .btn-group
+              = link_to  post, class: "btn" do
+                %i.icon-file
+              = link_to edit_post_path(post), class: "btn" do
+                %i.icon-pencil
+              = link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" do
+                %i.icon-trash
 
 
-= link_to 'New Post', new_post_path

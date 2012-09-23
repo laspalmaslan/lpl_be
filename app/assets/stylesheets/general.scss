@@ -119,28 +119,34 @@ header{
       }
     }
     .nav.well{
-      border-width: 2px 2px 2px 2px;
+      border-width: 0px 2px 2px 2px;
       padding:0;
       width:650px;
-      height:40px;
-      @include border-radius(22px 22px 22px 22px);
+      height:60px;
+      @include border-radius(0px 0px 22px 22px);
       position:absolute;
-      top: 38px;
-      right:0px;
+      top: 0px;
+      right:20px;
       li{ 
         line-height: 40px;
         margin-left: 24px; 
+        margin-top: 8px; 
         a{
           float:left;
+          @include border-radius(8px 8px 8px 8px);
           display:block;
           font-size: 18px;
-          padding: 0 10px 0 10px;
+          padding: 0 20px 0 20px;
+          background:$blue;
+          color:$white;
+          height:38px;
+          width:auto;
           &:hover{
-            background:transparent;
-            color:$white;
+            background:$white;
+            color:$blue;
           }
           &.active{
-            background-color:$blue;
+            background:$gray;
             color:$white;
           }
         }
@@ -195,12 +201,6 @@ header{
 }
 
 //blog
-h1.well{
-  height:12px;
-  line-height:12px;
-  text-align: center;
-  @include border-radius(30px);
-}
 article{
   margin-top:20px;
   font-size: 14px;

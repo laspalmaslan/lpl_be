@@ -1,0 +1,9 @@
+%article
+  %header
+    .title.pull-left
+      %strong
+        = @post.title
+    .social.pull-right
+      = social_share_button_tag(@post.title, link: article_url(@post)) 
+  %section
+    = @post.content.html_safe
