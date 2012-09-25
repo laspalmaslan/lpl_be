@@ -81,4 +81,21 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def publish_post
+    @post = Post.find(params[:id])
+    if @post.publish
+      format.html { redirect_to posts_path, notice: 'Post published.' }
+    else
+      format.html { redirect_to posts_path, notice: 'Sorry, Error.' }
+    end
+  end
+  def unpublish_post
+    @post = Post.find(params[:id])
+    if @post.unpublish
+      format.html { redirect_to posts_path, notice: 'Post unpublished.' }
+    else
+      format.html { redirect_to posts_path, notice: 'Sorry, Error.' }
+    end
+  end
 end
