@@ -1,4 +1,16 @@
 Lpl::Application.routes.draw do  
+  get "manage_calendar/index"
+
+  get "manage_calendar/new"
+
+  get "manage_calendar/edit"
+
+  get "manage_calendar/update"
+
+  get "manage_calendar/create"
+
+  get "manage_calendar/destroy"
+
   get "calendar/index"
   root :to => 'calendar#index'
 

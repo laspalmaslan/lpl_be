@@ -1,15 +1,9 @@
 %h1
   .title  
     CALENDAR
-%div.row-fluid.mycalendar
+%ul.row-fluid.mycalendar
   - @days.each do |day|
-    %ul
-      %li.cal_title
-        = day.date
-      - day.events.each do |event|
-        %li.myevent
-          = event.description
-          = event.event_time
+    = link_to day.day_date
 
 
     

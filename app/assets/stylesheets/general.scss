@@ -5,14 +5,15 @@
 @import "bootswatch/cyborg/bootswatch";
 @import "font-awesome";
 
+
 //variables
 $font-title: 'Contrail One', cursive;
 
-//tabla
-table.mytable{
-  text-align: center;
-}
 
+//body
+.mybody{
+  background-color: #000;
+}
 
 //title
 .title{
