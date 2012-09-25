@@ -3,7 +3,10 @@
     CALENDAR
 %ul.row-fluid.mycalendar
   - @days.each do |day|
-    = link_to day.day_date
+    = day.day_date
+    %li.span6
+      .span2
+        day.event.event_time
+      .span10
+        day.event.description
 
-
-    

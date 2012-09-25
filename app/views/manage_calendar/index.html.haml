@@ -1,2 +1,16 @@
-%h1 ManageCalendar#index
-%p Find me in app/views/manage_calendar/index.html.haml
+%h1
+  .title  
+    CALENDAR
+%ul.row-fluid.mycalendar
+  - @days.each do |day|
+    = day.day_date
+    %li.span6
+      .span2
+        day.event.event_time
+      .span10
+        day.event.description
+
+.span2.offset5
+  = link_to new_day_path, class: "btn btn-large" do
+    %i.icon-plus
+    New Day  
