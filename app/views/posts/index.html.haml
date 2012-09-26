@@ -1,11 +1,9 @@
-%h1
-  %i.icon-list-alt
-  Posts
 .span10.offset1
   %table.table.table-bordered.table-striped.table-hover
     %tr
       %th Título
       %th Acciones
+      %th Publicación
 
       - @posts.each do |post|
         %tr
@@ -18,5 +16,11 @@
                 %i.icon-pencil
               = link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" do
                 %i.icon-trash
-
-
+          %td
+            - if post.published_at.present?
+              = link_to unpublished_post_path(post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" do
+                %i.icon-unlock
+                = post.published_at
+            -else
+              = link_to published_post_path(post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" do
+                %i.icon-lock

@@ -2,12 +2,25 @@
   %header
     .title.pull-left
       %strong
-        = @post.title
+        = @post.title + "- Introducción"
+        = link_to 'Editar', edit_post_path(@post)
+        \|
+        = link_to 'Volver a la administración', posts_path
+    .social.pull-right
+      = social_share_button_tag(@post.title, link: post_url(@post)) 
+  %section
+    = @post.intro.html_safe
+
+%article
+  %header
+    .title.pull-left
+      %strong
+        = @post.title + "Post entero"
+        = link_to 'Editar', edit_post_path(@post)
+        \|
+        = link_to 'Volver a la administración', posts_path
     .social.pull-right
       = social_share_button_tag(@post.title, link: post_url(@post)) 
   %section
     = @post.content.html_safe
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
