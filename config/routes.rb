@@ -5,14 +5,13 @@ Lpl::Application.routes.draw do
 
   get "manage_calendar/edit"
 
-  get "manage_calendar/update"
+  post "manage_calendar/update"
 
-  get "manage_calendar/create"
+  post "manage_calendar/create"
 
   get "manage_calendar/destroy"
 
   get "calendar/index"
-  root :to => 'calendar#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
