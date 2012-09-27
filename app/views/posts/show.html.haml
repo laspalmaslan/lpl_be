@@ -1,11 +1,12 @@
+.actions
+  = link_to 'Editar', edit_post_path(@post)
+  \|
+  = link_to 'Volver a la administración', posts_path
 %article
   %header
     .title.pull-left
       %strong
         = @post.title + "- Introducción"
-        = link_to 'Editar', edit_post_path(@post)
-        \|
-        = link_to 'Volver a la administración', posts_path
     .social.pull-right
       = social_share_button_tag(@post.title, link: post_url(@post)) 
   %section
@@ -16,9 +17,6 @@
     .title.pull-left
       %strong
         = @post.title + "Post entero"
-        = link_to 'Editar', edit_post_path(@post)
-        \|
-        = link_to 'Volver a la administración', posts_path
     .social.pull-right
       = social_share_button_tag(@post.title, link: post_url(@post)) 
   %section

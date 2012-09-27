@@ -10,6 +10,13 @@
         .navbar-inner
           .container
             .brand Administración
+            %ul.nav
+              -if current_page?(posts_path)
+                %li.active
+                  =link_to "Manage posts", posts_path  
+              -else
+                %li
+                  =link_to "Manage Posts", posts_path
 
 
 
