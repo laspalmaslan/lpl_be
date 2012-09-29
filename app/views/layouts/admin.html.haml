@@ -6,20 +6,31 @@
     = csrf_meta_tags
   %body.admin
     %header
-      .navbar
+      .navbar.navbar-inverse
         .navbar-inner
           .container
             .brand Administración
             %ul.nav
               -if current_page?(posts_path)
                 %li.active
-                  =link_to "Manage posts", posts_path  
+                  %a.dropdown-toggle{data: {toggle: "dropdown"}}
+                    Posts
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      =link_to "Lista", posts_path
+                    %li
+                      =link_to "Nuevo", new_post_path
               -else
                 %li
-                  =link_to "Manage Posts", posts_path
-
-
-
+                  %a.dropdown-toggle{data: {toggle: "dropdown"}}
+                    Posts
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      =link_to "Lista", posts_path
+                    %li
+                      =link_to "Nuevo", new_posts_path
     .container
       .fow-fluid
         = yield

@@ -26,3 +26,4 @@ $ ->
     $('.slide.active').removeClass('active')
     $($('.slide')[pos]).addClass('active')), 5000
     
+  $('.with-tooltip').tooltip()
