@@ -1,3 +1,4 @@
+require 'ckeditor/engine'
 Lpl::Application.routes.draw do
   match "blog" => "blog#index", as: :blog
   match 'blog/:id/' => "blog#show", :as => :article
