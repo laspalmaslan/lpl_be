@@ -4,9 +4,6 @@
 
 
 $ ->
-  $(".social-share-button-facebook").append('<i class="icon-facebook"></i>')
-  $(".social-share-button-twitter").append('<i class="icon-twitter"></i>')
-
   $('.slide-control div').click ->
     $('.slide-control div.active').removeClass('active')
     $(this).addClass('active')

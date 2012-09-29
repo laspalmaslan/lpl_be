@@ -17,9 +17,8 @@ group :assets do
   gem 'font-awesome-sass-rails'
   gem 'bootswatch-rails'
   gem 'uglifier', '>= 1.0.3'
-  gem 'social-share-button', git: 'git://github.com/liangwenke/social-share-button.git'
   #javascript text editor
-  gem "ckeditor", "3.7.1"
+  gem "ckeditor", git: "git://github.com/galetahub/ckeditor.git"
 end
 
 gem 'jquery-rails'

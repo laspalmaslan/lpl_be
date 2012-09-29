@@ -1,26 +1,25 @@
-.span10.offset1
-  %table.table.table-bordered.table-striped.table-hover
-    %tr
-      %th Título
-      %th Acciones
-      %th Publicación
+%table.table.table-bordered.table-striped.table-hover
+  %tr
+    %th Título
+    %th Acciones
+    %th Publicación
 
-      - @posts.each do |post|
-        %tr
-          %td= post.title
-          %td
-            .btn-group
-              = link_to  post, class: "btn btn-primary with-tooltip", :title => "Vista previa" do
-                %i.icon-file
-              = link_to edit_post_path(post), class: "btn btn-primary with-tooltip" , :title => "Editar" do
-                %i.icon-pencil
-              = link_to post, method: :delete, data: { confirm: '¿Estas seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
-                %i.icon-trash
-          %td
-            - if post.published_at.present?
-              = link_to unpublished_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de publicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Despublicar" do
-                %i.icon-unlock
-                = post.published_at
-            -else
-              = link_to published_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de publicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Publicar" do
-                %i.icon-lock
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td
+          .btn-group
+            = link_to  post, class: "btn btn-primary with-tooltip", :title => "Vista previa" do
+              %i.icon-file
+            = link_to edit_post_path(post), class: "btn btn-primary with-tooltip" , :title => "Editar" do
+              %i.icon-pencil
+            = link_to post, method: :delete, data: { confirm: '¿Estas seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+              %i.icon-trash
+        %td
+          - if post.published_at.present?
+            = link_to unpublished_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de publicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Despublicar" do
+              %i.icon-unlock
+              = post.published_at
+          -else
+            = link_to published_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de publicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Publicar" do
+              %i.icon-lock

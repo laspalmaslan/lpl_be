@@ -8,7 +8,6 @@
       %strong
         = @post.title + "- Introducción"
     .social.pull-right
-      = social_share_button_tag(@post.title, link: post_url(@post)) 
   %section
     = @post.intro.html_safe
 
@@ -18,7 +17,6 @@
       %strong
         = @post.title + "Post entero"
     .social.pull-right
-      = social_share_button_tag(@post.title, link: post_url(@post)) 
   %section
     = @post.content.html_safe
 

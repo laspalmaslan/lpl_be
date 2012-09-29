@@ -1,8 +1,10 @@
 GIT
-  remote: git://github.com/liangwenke/social-share-button.git
-  revision: 3c4a41f05b2ccaa043ddd24f703fa3f35f3c8f50
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 3ab5eb54a4bb70e90339a8d8105783ef038f219b
   specs:
-    social-share-button (0.0.4)
+    ckeditor (3.7.3)
+      mime-types
+      orm_adapter
 
 GEM
   remote: https://rubygems.org/
@@ -54,9 +56,6 @@ GEM
       capybara (~> 1.0)
     childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
-    ckeditor (3.7.1)
-      mime-types
-      orm_adapter
     cocaine (0.3.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -211,7 +210,7 @@ DEPENDENCIES
   bourbon
   capybara
   capybara-firebug
-  ckeditor (= 3.7.1)
+  ckeditor!
   coffee-rails (~> 3.2.1)
   database_cleaner
   debugger
@@ -229,6 +228,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   selenium-webdriver
   simple_form
-  social-share-button!
   sqlite3
   uglifier (>= 1.0.3)
