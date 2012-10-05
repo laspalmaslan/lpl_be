@@ -44,6 +44,8 @@ gem "haml-rails"
 gem "simple_form"
 #upload files
 gem "paperclip"
+#heroku s3
+gem 'aws-sdk', '~> 1.3.4'
 
 group :development, :test do
   # To use debugger
