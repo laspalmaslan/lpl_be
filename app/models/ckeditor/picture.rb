@@ -6,7 +6,8 @@ class Ckeditor::Picture < Ckeditor::Asset
                     :bucket            => ENV['S3_BUCKET_NAME'],
                     :access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
                     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']},
-                    :path => "images/:id/:style_:basename.:extension"
+                    :path => "images/:id/:style_:basename.:extension",
+                    :url => "https://s3-eu-west-1.amazonaws.com/inexus/images/:id/:style_:basename.:extension"
                     
 	
 	validates_attachment_size :data, :less_than => 2.megabytes
