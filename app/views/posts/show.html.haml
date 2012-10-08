@@ -6,8 +6,18 @@
   %header
     .title.pull-left
       %strong
-        = @post.title + "- Introducción"
+        = @post.title + " - Introducción"
     .social.pull-right
+      -if @post.published_at.present?
+        = content_tag :div, "",class: "twitter", data: {text: @post.title + " " + article_url(@post)}
+        = content_tag :div, "",class: "facebook", data: {text: @post.title + " " + article_url(@post)}
+      -else
+        .fake
+          %a.social-share-button-twitter.fake-social
+            %i.icon-twitter
+        .fake
+          %a.social-share-button-facebook.fake-social
+            %i.icon-facebook
   %section
     = @post.intro.html_safe
 
@@ -15,8 +25,18 @@
   %header
     .title.pull-left
       %strong
-        = @post.title + "Post entero"
+        = @post.title + " - Post entero"
     .social.pull-right
+      -if @post.published_at.present?
+        = content_tag :div, "",class: "twitter", data: {text: @post.title + " " + article_url(@post)}
+        = content_tag :div, "",class: "facebook", data: {text: @post.title + " " + article_url(@post)}
+      -else
+        .fake
+          %a.social-share-button-twitter.fake-social
+            %i.icon-twitter
+        .fake
+          %a.social-share-button-facebook.fake-social
+            %i.icon-facebook
   %section
     = @post.content.html_safe
 

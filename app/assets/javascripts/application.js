@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require ckeditor/init
+//= require jquery.sharrre-1.3.3.min
 //= require_tree .

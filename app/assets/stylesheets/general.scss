@@ -21,6 +21,7 @@ $box-background:$grayDarker;
   height:45px;
   font-size: 34px;
   line-height: 50px;
+  display:block;
   &:hover{
     text-decoration:none;
     background: $white;
@@ -220,10 +221,17 @@ article{
       }
     }
     .social{
+      div{
+        float:left;
+        margin-left: 1px;
+      }
       .social-share-button-twitter{
         @include social-icon;
       }
       .social-share-button-facebook{
+        @include social-icon;
+      }
+      .social-share-button-googleplus{
         @include social-icon;
       }
     }

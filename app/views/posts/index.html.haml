@@ -17,7 +17,7 @@
               %i.icon-trash
         %td
           - if post.published_at.present?
-            = link_to unpublished_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de publicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Despublicar" do
+            = link_to unpublished_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de despublicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Despublicar" do
               %i.icon-unlock
               = post.published_at
           -else

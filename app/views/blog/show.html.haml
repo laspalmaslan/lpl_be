@@ -4,5 +4,7 @@
       %strong
         = @post.title
     .social.pull-right
+      = content_tag :div, "",class: "twitter", data: {text: @post.title + " " + article_url(@post)}
+      = content_tag :div, "",class: "facebook", data: {text: @post.title + " " + article_url(@post)}
   %section
     = @post.content.html_safe
