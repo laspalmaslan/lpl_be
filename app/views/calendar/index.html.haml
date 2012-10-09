@@ -5,8 +5,9 @@
   - @days.each do |day|
     = day.day_date
     %li.span6
-      .span2
-        day.event.event_time
-      .span10
-        day.event.description
-
+      - if day.events.present?
+        - day.events.each do |event|
+          .span2
+            = day.event.event_time
+          .span10
+            = day.event.description

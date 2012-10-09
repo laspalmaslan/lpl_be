@@ -1,8 +1,14 @@
-= simple_form_for(@day) do |f|
+= simple_form_for(@day, url: @day.new_record? ?  manage_calendar_create_path : manage_calendar_update_path(@day)) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :day_date
+
+    = f.fields_for :events do |field|
+      %fieldset
+        = field.label :content, "Event"
+        = field.text_area :content
+
 
   .form-actions
     = f.button :submit

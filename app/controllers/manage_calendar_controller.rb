@@ -15,7 +15,7 @@ class ManageCalendarController < ApplicationController
     @day = Day.find(params[:id])
     respond_to do |format|
       if @day.update_attributes(params[:day])
-        format.html { redirect_to manage_calendar_path, notice: 'Day was successfully updated.' }
+        format.html { redirect_to manage_calendar_index_path, notice: 'Day was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -26,7 +26,7 @@ class ManageCalendarController < ApplicationController
     @day = Day.new(params[:day])
     respond_to do |format|
       if @day.save
-        format.html { redirect_to manage_calendar_path, notice: 'day was successfully created.' }
+        format.html { redirect_to manage_calendar_index_path, notice: 'day was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -37,9 +37,9 @@ class ManageCalendarController < ApplicationController
     @day = Day.find(params[:id])
     respond_to do |format|
       if @day.destroy
-        format.html{ redirect_to manage_calendar_path, notice: 'Day deleted succesfully'}
+        format.html{ redirect_to manage_calendar_index_path, notice: 'Day deleted succesfully'}
       else
-        format.html{ redirect_to manage_calendar_path, notice: 'Day not deleted'}
+        format.html{ redirect_to manage_calendar_index_path, notice: 'Day not deleted'}
       end
     end
   end
