@@ -4,11 +4,12 @@
   .form-inputs
     = f.input :day_date
 
-    = f.fields_for :events do |field|
+    = f.simple_fields_for :events do |builder|
       %fieldset
-        = field.label :content, "Event"
-        = field.text_area :content
-
+        = builder.label :description, "Event"
+        = builder.text_area :description
+        = builder.check_box :_destroy
+        = builder.label :_destroy, "Remove event"
 
   .form-actions
     = f.button :submit
