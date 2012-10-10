@@ -1,0 +1,13 @@
+%h1
+  .title  
+    CALENDAR
+%ul.row-fluid.mycalendar
+  - @days.each do |day|
+    = day.day_date
+    %li.span6
+      - if day.events.present?
+        - day.events.each do |event|
+          .span2
+            = day.event.event_time
+          .span10
+            = day.event.description

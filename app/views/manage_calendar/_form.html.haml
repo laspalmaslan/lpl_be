@@ -1,0 +1,14 @@
+= simple_form_for(@day, url: @day.new_record? ?  manage_calendar_create_path : manage_calendar_update_path(@day)) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :day_date
+
+    = f.simple_fields_for :events do |builder|
+      %fieldset
+        = builder.label :description, "Event"
+        = builder.text_area :description
+        = link_to "Remove event", '#', class: "remove_fields"
+        = builder.hidden_field :_destroy 
+  .form-actions
+    = f.button :submit 
