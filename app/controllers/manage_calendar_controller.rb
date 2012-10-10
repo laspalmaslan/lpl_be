@@ -6,6 +6,8 @@ class ManageCalendarController < ApplicationController
   def new
     @day = Day.new
     @day.events.build
+    @day.events.build
+    @day.events.build
   end
 
   def edit
