@@ -46,6 +46,8 @@ gem "simple_form"
 gem "paperclip"
 #heroku s3
 gem 'aws-sdk', '~> 1.3.4'
+#nested attributes
+gem "nested_form"
 
 group :development, :test do
   # To use debugger

@@ -1,14 +1,16 @@
-= simple_form_for(@day, url: @day.new_record? ?  manage_calendar_create_path : manage_calendar_update_path(@day)) do |f|
+= simple_nested_form_for(@day, url: @day.new_record? ?  create_manage_calendar_path : update_manage_calendar_path(@day)) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :day_date
 
-    = f.simple_fields_for :events do |builder|
+    = f.simple_fields_for :events do |event|
       %fieldset
-        = builder.label :description, "Event"
-        = builder.text_area :description
-        = link_to "Remove event", '#', class: "remove_fields"
-        = builder.hidden_field :_destroy 
+        = event.label :description, "descripción del evento"
+        = event.input :description
+        = event.label :event_time, "hora del evento"
+        = event.input :event_time
+        = event.link_to_remove "-"
+    = f.link_to_add "+", :events
   .form-actions
     = f.button :submit 

@@ -1,6 +1,3 @@
-%h1
-  .title  
-    CALENDAR
 %ul.row-fluid.mycalendar
   - @days.each do |day|
     = day.day_date
@@ -12,11 +9,11 @@
           .span8
             = event.description
           .span2
-            = link_to manage_calendar_edit_path, class: "btn btn-small" do
+            = link_to edit_manage_calendar_path(day.id), class: "btn btn-small" do
               %i.icon-plus
-              Update Day  
+              Edit day  
 
 .span2.offset5
-  = link_to manage_calendar_new_path, class: "btn btn-large" do
+  = link_to new_manage_calendar_path, class: "btn btn-large" do
     %i.icon-plus
     New Day
