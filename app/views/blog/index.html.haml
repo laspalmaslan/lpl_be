@@ -5,8 +5,8 @@
         %strong
           = link_to post.title, article_path(post)
       .social.pull-right
-        = content_tag :div, "",class: "twitter", data: {text: post.title, url: article_path(post)}
-        = content_tag :div, "",class: "facebook", data: {text: post.title, url: article_path(post)}
+        = content_tag :div, "",class: "twitter", data: {text: post.title, url: article_url(post)}
+        = content_tag :div, "",class: "facebook", data: {text: post.title, url: article_url(post)}
     %section
       = post.intro.html_safe
     %footer
