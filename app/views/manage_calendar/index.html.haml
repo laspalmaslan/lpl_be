@@ -1,19 +1,37 @@
-%ul.row-fluid.mycalendar
+%table.table.table-bordered.table-striped.table-hover
+  %tr
+    %th
+      Fecha
+    %th
+      Hora
+    %th
+      Evento
+    %th
+      Edición
+
   - @days.each do |day|
-    = day.day_date
-    %li.span6
-      - if day.events.present?
-        - day.events.each do |event|
-          .span2
-            = event.event_time
-          .span8
+    %tr
+      %th
+        = day.day_date
+      %th
+        - if day.events.present?
+          - day.events.each do |event|
+            = event.event_time.strftime("%H:%M")
+            %br
+            %p
+              ______
+      %th
+        - if day.events.present?
+          - day.events.each do |event|
             = event.description
-          .span2
-            = link_to edit_manage_calendar_path(day.id), class: "btn btn-small" do
-              %i.icon-plus
-              Edit day  
+            %br
+            %p
+              _____
+      %th
+        = link_to edit_manage_calendar_path(day.id), class: "btn btn-primary with-tooltip", title: "Editar Día" do
+          %i.icon-pencil
 
 .span2.offset5
   = link_to new_manage_calendar_path, class: "btn btn-large" do
     %i.icon-plus
-    New Day
+    Nuevo día

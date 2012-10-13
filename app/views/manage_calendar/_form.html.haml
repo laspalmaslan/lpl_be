@@ -7,10 +7,14 @@
     = f.simple_fields_for :events do |event|
       %fieldset
         = event.label :description, "descripción del evento"
-        = event.input :description
+        = event.text_area :description, rows: 5
         = event.label :event_time, "hora del evento"
         = event.input :event_time
-        = event.link_to_remove "-"
-    = f.link_to_add "+", :events
+        = event.link_to_remove class: "btn", href: '#' do
+          %i.icon-minus
+          Quitar
+    = f.link_to_add :events, class: "btn", href: '#' do
+      %i.icon-plus
+      Añadir
   .form-actions
     = f.button :submit 
