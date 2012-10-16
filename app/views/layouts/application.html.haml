@@ -25,7 +25,7 @@
                 lan
 
         %ul.nav.pull-left.well
-          -if current_page?(blog_path) or current_page?(root_path) or current_page?(article_path)
+          -if current_page?(blog_path) or current_page?(root_path)
             %li
               =link_to "Blog", root_path, class: "active" 
           -else
