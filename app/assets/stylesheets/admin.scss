@@ -3,12 +3,16 @@
 @import "font-awesome";
 
 //overwrite bootstrap
+.navbar {
+  .nav .dropdown-toggle .caret{
+    color: $white;
+  }
+}
 .navbar .container {
   width: 940px;
   margin-right: auto;
   margin-left: auto;
 }
-
 .table{
   tr{
     td, th{

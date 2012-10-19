@@ -4,6 +4,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    %meta{:name => "google-site-verification", :content =>"_rU5LQyvI3emLQxMTxIqjf3zs998kmHDp-IAfduun3U"}
   %body
     .container
       %header
@@ -25,12 +26,8 @@
                 lan
 
         %ul.nav.pull-left.well
-          -if current_page?(blog_path) or current_page?(root_path) or current_page?(article_path)
-            %li
-              =link_to "Blog", root_path, class: "active" 
-          -else
-            %li
-              =link_to "Blog", root_path
+          %li
+            =link_to "Blog", root_path, class: (@current_controller == 'blog' ? "active" : nil) 
 
         %ul.slide-control.pull-right
           %li
