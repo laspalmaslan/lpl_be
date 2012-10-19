@@ -28,7 +28,6 @@ $ ->
     share: { twitter: true },
     enableHover: false,
     enableTracking: true,
-    url: "",
     template: "<div class='box'><a href='#' class='share social-share-button-twitter'><i class='icon-twitter'></i></a></div>"
     click: (api, options) ->
       api.simulateClick()
@@ -38,7 +37,6 @@ $ ->
     share: { facebook: true },
     enableHover: false,
     enableTracking: true,
-    url: "",
     template: "<div class='box'><a href='#' class='share social-share-button-facebook'><i class='icon-facebook'></i></a></div>"
     click: (api, options) ->
       api.simulateClick()

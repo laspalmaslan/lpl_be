@@ -11,7 +11,7 @@
           .container
             .brand Administración
             %ul.nav
-              %li{class: (current_page?(posts_path) ? "active" : nil)}
+              %li{class: (@current_controller == 'posts' ? "active" : nil)}
                 %a.dropdown-toggle{data: {toggle: "dropdown"}}
                   Posts
                   %b.caret
@@ -21,6 +21,6 @@
                   %li
                     =link_to "Nuevo", new_post_path
     .container
-      .fow-fluid
+      .row-fluid
         .span12
           = yield
