@@ -11,9 +11,9 @@ class ManageAdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     respond_to do |format|
       if @admin.activate
-        format.html {rediret_to admins_list_path(), notice: "Admin activado"}
+        format.html {redirect_to admins_list_path(), notice: "Admin activado"}
       else
-        format.html {rediret_to admins_list_path(), notice: "Perdón algo fue mal"}
+        format.html {redirect_to admins_list_path(), notice: "Perdón algo fue mal"}
       end
     end
   end
@@ -21,10 +21,10 @@ class ManageAdminsController < ApplicationController
   def deactivate
     @admin = Admin.find(params[:id])
     respond_to do |format|
-      if @admin.activate
-        format.html {rediret_to admins_list_path(), notice: "Admin activado"}
+      if @admin.deactivate
+        format.html {redirect_to admins_list_path(), notice: "Admin desactivado"}
       else
-        format.html {rediret_to admins_list_path(), notice: "Perdón algo fue mal"}
+        format.html {redirect_to admins_list_path(), notice: "Perdón algo fue mal"}
       end
     end
   end

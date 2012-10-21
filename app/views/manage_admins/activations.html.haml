@@ -8,7 +8,7 @@
       %tr
         %td= admin.email
         %td
-          = link_to deactivate_admin_path(admin.id), method: :delete, data: { confirm: '¿Estas seguro de despublicar este admin?' }, class: "btn btn-warning with-tooltip" , :title => "Desactivar" do
+          = link_to deactivate_admin_path(admin.id), method: :delete, data: { confirm: '¿Estas seguro de desactivar este admin?' }, class: "btn btn-warning with-tooltip" , :title => "Desactivar" do
             %i.icon-unlock
 
 %h3 Admins desactivados
@@ -21,7 +21,7 @@
       %tr
         %td= admin.email
         %td
-          = link_to activate_admin_path(admin.id), method: :delete, data: { confirm: '¿Estas seguro de publicar este admin?' }, class: "btn btn-warning with-tooltip" , :title => "Activar" do
+          = link_to activate_admin_path(admin.id), method: :delete, data: { confirm: '¿Estas seguro de activar este admin?' }, class: "btn btn-warning with-tooltip" , :title => "Activar" do
             %i.icon-lock
 
 
