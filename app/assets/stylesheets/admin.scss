@@ -4,8 +4,21 @@
 
 //overwrite bootstrap
 .navbar {
-  .nav .dropdown-toggle .caret{
-    color: $white;
+  .nav {
+    li{
+      .dropdown-toggle {
+        .caret{
+          border-top-color: $textColor;
+        }
+      }
+    }
+    li.active{
+      .dropdown-toggle {
+        .caret{
+          border-top-color: $white;
+        }
+      }
+    }
   }
 }
 .navbar .container {

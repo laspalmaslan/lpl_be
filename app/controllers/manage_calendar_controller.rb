@@ -1,5 +1,6 @@
 class ManageCalendarController < ApplicationController
   layout "admin"
+  before_filter :authenticate_admin!
   def index
     @days = Day.all
   end

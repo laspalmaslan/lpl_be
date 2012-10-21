@@ -1,0 +1,13 @@
+%html
+  %head
+    %title Lpl
+    = stylesheet_link_tag    "admin", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body.admin
+    %header
+    .container
+      .row-fluid
+        .span12
+          .offset4.span4
+            = yield
