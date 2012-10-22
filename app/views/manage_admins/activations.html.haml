@@ -8,8 +8,12 @@
       %tr
         %td= admin.email
         %td
-          = link_to deactivate_admin_path(admin.id), method: :delete, data: { confirm: '¿Estas seguro de desactivar este admin?' }, class: "btn btn-warning with-tooltip" , :title => "Desactivar" do
-            %i.icon-unlock
+          - if current_admin == admin
+            = link_to "#", class: "btn btn-warning disabled" do
+              %i.icon-unlock
+          - else
+            = link_to deactivate_admin_path(admin.id), method: :delete, data: { confirm: '¿Estas seguro de desactivar este admin?' }, class: "btn btn-warning with-tooltip" , :title => "Desactivar" do
+              %i.icon-unlock
 
 %h3 Admins desactivados
 %table.table.table-bordered.table-striped.table-hover
