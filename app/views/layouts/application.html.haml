@@ -31,6 +31,12 @@
           -else
             %li
               =link_to "Blog", root_path
+          -if current_page?(manage_calendars_path)
+            %li
+              =link_to "Calendario", calendar_path, class: "active"
+          -else
+            %li
+              =link_to "Calendario", calendar_path
 
         %ul.slide-control.pull-right
           %li
