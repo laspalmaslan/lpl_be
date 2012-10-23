@@ -9,7 +9,7 @@
         %td= admin.email
         %td
           - if current_admin == admin
-            = link_to "#", class: "btn btn-warning disabled" do
+            .btn.btn-warning.disabled
               %i.icon-unlock
           - else
             = link_to deactivate_admin_path(admin.id), method: :delete, data: { confirm: '¿Estas seguro de desactivar este admin?' }, class: "btn btn-warning with-tooltip" , :title => "Desactivar" do
