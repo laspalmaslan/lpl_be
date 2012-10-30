@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title Lpl
+    %title Las Palmas LAN 2012
     = stylesheet_link_tag    "admin", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -43,7 +43,7 @@
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    =link_to "Cambiar contraseña", edit_admin_password_path
+                    =link_to "Cambiar datos personales", edit_admin_registration_path
                   %li
                     = link_to('Logout', destroy_admin_session_path, :method => :delete)
     .container

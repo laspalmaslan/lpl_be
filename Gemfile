@@ -13,7 +13,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass', '~> 2.1.0.0'
-  gem 'bourbon'
   gem 'font-awesome-sass-rails'
   gem 'bootswatch-rails'
   gem 'uglifier', '>= 1.0.3'
@@ -48,6 +47,7 @@ gem "paperclip"
 gem 'aws-sdk', '~> 1.3.4'
 #nested attributes
 gem "nested_form"
+  gem 'bourbon'
 
 group :development, :test do
   # To use debugger
