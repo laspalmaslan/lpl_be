@@ -64,3 +64,5 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
+# Para resolver fallo de rake db:create
+gem 'therubyracer', require: "v8"
