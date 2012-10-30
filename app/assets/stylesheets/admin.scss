@@ -3,12 +3,29 @@
 @import "font-awesome";
 
 //overwrite bootstrap
+.navbar {
+  .nav {
+    li{
+      .dropdown-toggle {
+        .caret{
+          border-top-color: $textColor;
+        }
+      }
+    }
+    li.active{
+      .dropdown-toggle {
+        .caret{
+          border-top-color: $white;
+        }
+      }
+    }
+  }
+}
 .navbar .container {
   width: 940px;
   margin-right: auto;
   margin-left: auto;
 }
-
 .table{
   tr{
     td, th{

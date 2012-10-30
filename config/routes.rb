@@ -1,6 +1,9 @@
 require 'ckeditor/engine'
 
 Lpl::Application.routes.draw do
+
+  devise_for :admins
+
   match "blog" => "blog#index", as: :blog
   match 'blog/:id/' => "blog#show", :as => :article
   root to: "blog#index"
@@ -24,5 +27,9 @@ Lpl::Application.routes.draw do
     match "manage_calendar/:id/update" => 'manage_calendar#update', via: :put, as: :update_manage_calendar
     match "manage_calendar/create" => 'manage_calendar#create', via: :post, as: :create_manage_calendar
     match "manage_calendar/:id/destroy" => 'manage_calendar#destroy', via: :delete, as: :destroy_manage_calendar
+    # manage admin activations
+    match "manage_admins" => 'manage_admins#activations', as: :admins_list
+    match "manage_admins/activate/:id" => 'manage_admins#activate', as: :activate_admin
+    match "manage_admins/deactivate/:id" => 'manage_admins#deactivate', as: :deactivate_admin
   end
 end

@@ -12,7 +12,7 @@
   - @days.each do |day|
     %tr
       %td
-        = day.day_date
+        = day.day_date.strftime("%d-%m-%Y")
       %td
         - if day.events.present?
           - day.events.each do |event|
