@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  before_filter :instantiate_controller_name
+  before_filter :instantiate_controller_name, :instantiate_action_name
 
   def instantiate_controller_name
     @current_controller = controller_name
