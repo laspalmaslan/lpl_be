@@ -94,38 +94,12 @@ header{
       height: 170px;
       background-size: 418px;
       background-position: 42% 28%;
-      &.well{
-        border-top:0;
-      }
       .title{
         font-size: 130px;
         line-height: 126px;
-        span{
-            margin-left:-26px;
-          &:first-child{
-            margin-left:0;
-          }
-          &.l{
-            color: $white;
-          }
-          &.p{
-            color: $blue;
-          }
-        }
-      }
-      .description{
-        .las{
-          color: $white;
-        }
-        .palmas{
-          color: $blue;
-        }
-        .lan{
-          color: $white;
-        }
       }
     }
-    .nav.well{
+    .nav{
       border-width: 0px 2px 2px 2px;
       padding:0;
       width:650px;
@@ -140,14 +114,16 @@ header{
         margin-top: 8px; 
         a{
           float:left;
-          @include border-radius(8px 8px 8px 8px);
+          @include border-radius(30px);
           display:block;
-          font-size: 18px;
-          padding: 0 20px 0 20px;
+          font-size: 30px;
+          padding: 0;
           background:$blue;
           color:$white;
-          height:38px;
-          width:auto;
+          height:50px;
+          width:50px;
+          text-align: center;
+          line-height: 50px;
           &:hover{
             background:$white;
             color:$blue;
@@ -155,6 +131,12 @@ header{
           &.active{
             background:$gray;
             color:$white;
+          }
+          .section_name {
+            display: none;
+            background: transparent;
+            color: $white;
+            margin-left:-50%;
           }
         }
       }

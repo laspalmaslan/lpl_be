@@ -12,9 +12,10 @@
         #banner
           #logo.well
 
-        %ul.nav.pull-left.well
+        %ul.nav.pull-left
           %li
-            =link_to "Blog", root_path, class: (@current_controller == 'blog' ? "active" : nil) 
+            =link_to root_path, class: (@current_controller == 'blog' ? "active" : nil), id: "Notícias" do
+              %i.icon-align-justify
 
         %ul.slide-control.pull-right
           %li
