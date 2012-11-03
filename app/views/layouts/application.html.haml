@@ -14,8 +14,11 @@
 
         %ul.nav.pull-left
           %li
-            =link_to root_path, class: (@current_controller == 'blog' ? "active" : nil), id: "Notícias" do
-              %i.icon-align-justify
+            .link
+              =link_to root_path, class: (@current_controller == 'blog' ? "active" : nil), id: "Notricias" do
+                %i.icon-align-justify
+            .title
+              Noticias
 
         %ul.slide-control.pull-right
           %li
