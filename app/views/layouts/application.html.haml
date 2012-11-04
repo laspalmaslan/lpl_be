@@ -15,6 +15,9 @@
         %ul.nav.pull-left.well
           %li
             =link_to "Blog", root_path, class: (@current_controller == 'blog' ? "active" : nil) 
+	
+          %li
+            =link_to "static_pages", root_path, class: (@current_controller == 'blog' and @current_action == "rules"? "active" : nil)
 
         %ul.slide-control.pull-right
           %li
