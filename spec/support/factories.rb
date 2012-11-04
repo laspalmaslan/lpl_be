@@ -11,4 +11,9 @@ FactoryGirl.define do
   factory :day do 
     day_date Date.today
   end
+  factory :admin do
+    email "example@test.com"
+    password "tupelo"
+    approved true
+  end
 end

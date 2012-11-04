@@ -14,7 +14,3 @@ describe "check the event list" do
     page.has_content? @day.day_date.strftime("%d-%m-%y") 
   end
 end
-
-
-
-
