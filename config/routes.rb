@@ -8,7 +8,7 @@ Lpl::Application.routes.draw do
   match 'blog/:id/' => "blog#show", :as => :article
   root to: "blog#index"
 
-  match "normativa" => "static_pages#rules", as: :Normativa
+  match "normativa" => "static_pages#rules", as: :rules
   match "calendar" => "calendar#index", as: :calendar
 
   # The priority is based upon order of creation:
