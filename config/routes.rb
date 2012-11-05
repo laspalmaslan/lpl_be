@@ -9,6 +9,7 @@ Lpl::Application.routes.draw do
   root to: "blog#index"
 
   match "normativa" => "static_pages#rules", as: :rules
+  match "descripcion" => "static_pages#description", as: :description
   match "calendar" => "calendar#index", as: :calendar
 
   # The priority is based upon order of creation:
