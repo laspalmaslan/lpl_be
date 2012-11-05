@@ -21,7 +21,7 @@
                     =link_to "Lista", posts_path
                   %li
                     =link_to "Nuevo", new_post_path
-              %li{class: (current_page?(manage_calendars_path) ? "active" : nil)}
+              %li{class: (@current_controller == 'manage_calendar' ? "dropdown active" : "dropdown")}
                 %a.dropdown-toggle{data: {toggle: "dropdown"}}
                   Calendar
                   %b.caret

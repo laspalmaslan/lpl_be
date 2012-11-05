@@ -93,38 +93,12 @@ header{
       height: 170px;
       background-size: 418px;
       background-position: 42% 28%;
-      &.well{
-        border-top:0;
-      }
       .title{
         font-size: 130px;
         line-height: 126px;
-        span{
-            margin-left:-26px;
-          &:first-child{
-            margin-left:0;
-          }
-          &.l{
-            color: $white;
-          }
-          &.p{
-            color: $blue;
-          }
-        }
-      }
-      .description{
-        .las{
-          color: $white;
-        }
-        .palmas{
-          color: $blue;
-        }
-        .lan{
-          color: $white;
-        }
       }
     }
-    .nav.well{
+    .nav{
       border-width: 0px 2px 2px 2px;
       padding:0;
       width:650px;
@@ -137,25 +111,41 @@ header{
         line-height: 40px;
         margin-left: 24px; 
         margin-top: 8px; 
-        a{
-          float:left;
-          @include border-radius(8px 8px 8px 8px);
-          display:block;
-          font-size: 18px;
-          padding: 0 20px 0 20px;
-          background:$blue;
-          color:$white;
-          height:38px;
-          width:auto;
-          &:hover{
-            background:$white;
-            color:$blue;
-          }
-          // el calendario no me lo pilla lo del gris
-          &.active{
-            background:$gray;
+        float:left;
+        color: transparent;
+        &:hover{
+          color: $white;
+        }
+        .link {
+          a{
+            margin-right: auto;
+            margin-left: auto;
+            @include border-radius(30px);
+            display:block;
+            font-size: 30px;
+            padding: 0;
+            background:$blue;
             color:$white;
+            height:50px;
+            width:50px;
+            text-align: center;
+            line-height: 50px;
+            &:hover{
+              background:$white;
+              color:$blue;
+              text-decoration: none;
+            }
+            &.active{
+              background:$gray;
+              color:$white;
+            }
           }
+        }
+        .title{
+          background: transparent;
+          text-align: center;
+          font-size:20px;
+          
         }
       }
     }
@@ -301,14 +291,15 @@ form.custom-form{
 .mycalendar{
   ul.span4{
     margin-top: 15px;
+    width: 23%;
   }
   .span10.eventspan{
     border-left: solid 2px;
     border-right: solid 2px;
     border-color: $blue;
     padding-left: 16px;
-    margin-left: 26px;
-    width: 200px;
+    margin-left: 11px;
+    width: 178px;
     &:nth-child(2n+1){
       background-color: $grayDark;
     }
@@ -318,12 +309,12 @@ form.custom-form{
     }
   }
   li.span12{
-    width: 250px;
+    width: 200px;
     border: solid 2px;
     border-color: $blue;
     @include border-radius(8px 8px 8px 8px);
-    padding-left: 90px;
+    padding-left: 65px;
   }
-  padding-left: 25px;
+  padding-left: 16px;
 }
 
