@@ -10,5 +10,8 @@
     %section
       = post.intro.html_safe
     %footer
+      .published_at
+        Publicado el 
+        = post.published_at.strftime("%d/%m/%Y")
       .read_more
         = link_to 'Leer más >>', article_path(post)
