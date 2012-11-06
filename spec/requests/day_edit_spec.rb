@@ -3,6 +3,9 @@ require 'spec_helper'
 
 describe "Check the edition" do
   before "Edit the day and event fields" do
+    @day = FactoryGirl.create :day
+    event = FactoryGirl.create :event
+    @day.events << event
     @admin = FactoryGirl.create :admin
     log_in(@admin)
     visit edit_manage_calendar_path(@day.id)
@@ -12,7 +15,7 @@ describe "Check the edition" do
     fill_in "day_events_attributes_0_description", :with => "Testing Edit"
     select '18', :from => 'day_events_attributes_0_event_time_4i'
     select '00', :from => 'day_events_attributes_0_event_time_5i'
-    click_on "Create Day"
+    click_on "Update Day"
   end
   it "check day edition" do
     event = Event.where(description: "Testing Edit").first
