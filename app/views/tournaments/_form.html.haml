@@ -1,0 +1,10 @@
+= simple_form_for(@tournament) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :game
+    = f.input :description
+    = f.input :award
+
+  .form-actions
+    = f.button :submit

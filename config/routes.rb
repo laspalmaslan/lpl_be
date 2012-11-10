@@ -2,6 +2,8 @@ require 'ckeditor/engine'
 
 Lpl::Application.routes.draw do
 
+  resources :tournaments
+
   devise_for :admins
 
   match "blog" => "blog#index", as: :blog
