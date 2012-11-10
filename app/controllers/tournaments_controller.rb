@@ -1,4 +1,6 @@
 class TournamentsController < ApplicationController
+  before_filter :authenticate_admin!
+  layout "admin"
   # GET /tournaments
   # GET /tournaments.json
   def index

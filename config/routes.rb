@@ -2,12 +2,12 @@ require 'ckeditor/engine'
 
 Lpl::Application.routes.draw do
 
-  resources :tournaments
-
   devise_for :admins
 
   match "blog" => "blog#index", as: :blog
   match 'blog/:id/' => "blog#show", :as => :article
+  match "competiciones" => "competitions#index", as: :competitions
+  match "competiciones/:id" => "competitions#show"
   root to: "blog#index"
 
 
@@ -19,6 +19,7 @@ Lpl::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "/admin" do
+    resources :tournaments
     resources :posts
     match 'publish_post/:id' => 'posts#publish_post', as: :published_post
     match 'unpublish_post/:id' => 'posts#unpublish_post', as: :unpublished_post

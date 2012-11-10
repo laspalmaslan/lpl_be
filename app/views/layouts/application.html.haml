@@ -24,6 +24,12 @@
                 %i.icon-calendar
             .title
               Eventos
+          %li
+            .link
+              =link_to competitions_path, class: (@current_controller == 'competitions' ? "active" : nil) do
+                %i.icon-trophy
+            .title
+              Competiciones
         %ul.slide-control.pull-right
           %li
             %div.active 

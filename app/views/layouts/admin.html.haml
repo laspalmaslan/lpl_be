@@ -23,13 +23,22 @@
                     =link_to "Nuevo", new_post_path
               %li{class: (@current_controller == 'manage_calendar' ? "dropdown active" : "dropdown")}
                 %a.dropdown-toggle{data: {toggle: "dropdown"}}
-                  Calendar
+                  Calendario
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    =link_to "Eventos", manage_calendars_path
+                    =link_to "Competiciones", manage_calendars_path
                   %li
-                    =link_to "Nuevo Dia", new_manage_calendar_path
+                    =link_to "Nueva competición", new_manage_calendar_path
+              %li{class: (@current_controller == 'tournaments' ? "dropdown active" : "dropdown")}
+                %a.dropdown-toggle{data: {toggle: "dropdown"}}
+                  Competiciones
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    =link_to "Eventos", tournaments_path
+                  %li
+                    =link_to "Nuevo Dia", new_tournament_path
               %li{class: (@current_controller == 'manage_admins' ? "dropdown active" : "dropdown")}
                 %a.dropdown-toggle{data: {toggle: "dropdown"}}
                   Admins
