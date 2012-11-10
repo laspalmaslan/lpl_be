@@ -11,7 +11,6 @@
       %header
         #banner
           #logo.well
-
         %ul.nav.pull-left
           %li
             .link
@@ -19,7 +18,12 @@
                 %i.icon-align-justify
             .title
               Noticias
-
+          %li
+            .link
+              =link_to calendar_path, class: (@current_controller == 'calendar' ? "active" : nil) do
+                %i.icon-calendar
+            .title
+              Eventos
         %ul.slide-control.pull-right
           %li
             %div.active 
