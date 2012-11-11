@@ -44,4 +44,10 @@
   border-color: black;
   border-radius: 8px;
 }
+// forms
 
+.form-inputs {
+  input, textarea {
+    width: 100%;
+  }
+}

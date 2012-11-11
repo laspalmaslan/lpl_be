@@ -1,23 +1,20 @@
 %h1 Listing tournaments
 
-%table
+%table.table.table-bordered.table-striped.table-hover
   %tr
-    %th Game
-    %th Description
-    %th Award
-    %th
-    %th
-    %th
+    %th Juego
+    %th Descripción
+    %th Premio
+    %th Acciones
 
   - @tournaments.each do |tournament|
     %tr
       %td= tournament.game
       %td= tournament.description
       %td= tournament.award
-      %td= link_to 'Show', tournament
-      %td= link_to 'Edit', edit_tournament_path(tournament)
-      %td= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Tournament', new_tournament_path
+      %td
+        .btn-group
+          = link_to edit_tournament_path(tournament), class: "btn btn-primary with-tooltip" , :title => "Editar" do
+            %i.icon-pencil
+          = link_to tournament, method: :delete, data: { confirm: '¿Estas seguro de eliminar este torneo?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+            %i.icon-trash

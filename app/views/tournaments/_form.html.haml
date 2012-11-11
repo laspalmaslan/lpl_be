@@ -1,8 +1,13 @@
 = simple_form_for(@tournament) do |f|
-  = f.error_notification
+  - if @tournament.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@tournament.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @tournament.errors.full_messages.each do |msg|
+          %li= msg
 
   .form-inputs
-    = f.input :game
+    = f.input :game 
     = f.input :description
     = f.input :award
 
