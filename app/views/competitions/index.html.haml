@@ -1,2 +1,6 @@
-%h1 Competitions#index
-%p Find me in app/views/competitions/index.html.haml
+%table.table.table-bordered.table-striped.table-hover
+  - @tournaments.each do |tournament|
+    %tr
+      %td= tournament.game
+      %td= tournament.description
+      %td= tournament.award

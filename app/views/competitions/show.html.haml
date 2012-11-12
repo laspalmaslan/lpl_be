@@ -1,2 +1,10 @@
-%h1 Competitions#show
-%p Find me in app/views/competitions/show.html.haml
+%article
+  %header
+    .title.pull-left
+      %strong
+        = link_to @tournament.game, competitions_path(@tournament.id)
+    .social.pull-right
+      = content_tag :div, "",class: "twitter", data: {text: @tournament.game, url: competitions_path(@tournament.id)}
+      = content_tag :div, "",class: "facebook", data: {text: @tournament.game, url: competitions_path(@tournament.id)}
+  %section
+    = @tournament.description.html_safe
