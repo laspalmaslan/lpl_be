@@ -7,7 +7,26 @@
     %th Premio
     %th Acciones
 
-  - @tournaments.each do |tournament|
+  - @computer_games.each do |tournament|
+    %tr
+      %td= tournament.game
+      %td= tournament.description
+      %td= tournament.award
+      %td
+        .btn-group
+          = link_to edit_tournament_path(tournament), class: "btn btn-primary with-tooltip" , :title => "Editar" do
+            %i.icon-pencil
+          = link_to tournament, method: :delete, data: { confirm: '¿Estas seguro de eliminar este torneo?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+            %i.icon-trash
+
+%table.table.table-bordered.table-striped.table-hover
+  %tr
+    %th Juego
+    %th Descripción
+    %th Premio
+    %th Acciones
+
+  - @station_games.each do |tournament|
     %tr
       %td= tournament.game
       %td= tournament.description

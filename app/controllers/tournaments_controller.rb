@@ -4,7 +4,8 @@ class TournamentsController < ApplicationController
   # GET /tournaments
   # GET /tournaments.json
   def index
-    @tournaments = Tournament.all
+    @computer_games = Tournament.where(pc: true)
+    @satation_games = Tournament.where(pc: false)
 
     respond_to do |format|
       format.html # index.html.erb

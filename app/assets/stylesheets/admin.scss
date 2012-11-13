@@ -47,7 +47,10 @@
 // forms
 
 .form-inputs {
-  input, textarea {
+  input, textarea, .cke_skin_kama {
     width: 100%;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    width:auto;
   }
 }
