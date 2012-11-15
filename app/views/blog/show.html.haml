@@ -8,3 +8,6 @@
       = content_tag :div, "",class: "facebook", data: {text: @post.title, url: article_url(@post)}
   %section
     = @post.content.html_safe
+  %footer
+    .published_at
+      = post.published_at
