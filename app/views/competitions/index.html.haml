@@ -1,0 +1,10 @@
+%section.main
+  -if @tournaments.count > 0
+    %table.table.table-bordered.table-striped.table-hover
+      - @tournaments.each do |tournament|
+        %tr
+          %td= link_to tournament.game, competition_path(tournament.id)
+          %td= tournament.award
+  -else
+    Lo sentimos mucho, aun no hay torneos, pero estad atentos pronto habrá novedades, 
+    y tendreis toda la información sobre ellos en esta sección.

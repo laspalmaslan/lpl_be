@@ -1,29 +1,12 @@
-%table.table.table-bordered.table-striped.table-hover
-  %tr
-    %th
-      Fecha
-    %th
-      Hora
-    %th
-      Evento
-    %th
-      Edición
-
+.row-fluid.mycalendar
   - @days.each do |day|
-    %tr
-      %th
+    %ul.span4
+      %li.span12
         = day.day_date
-      %th
-        - if day.events.present?
-          - day.events.each do |event|
-            = event.event_time.strftime("%H:%M")
-            %br
-            %p
-              ______
-      %th
-        - if day.events.present?
-          - day.events.each do |event|
-            = event.description
-            %br
-            %p
-              _____
+      - day.events.each do |event|
+        .span10.eventspan
+          %li.span10
+            .span4
+              = event.event_time.strftime("%H:%M")
+            .span8  
+              = event.description

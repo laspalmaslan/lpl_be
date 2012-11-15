@@ -6,6 +6,8 @@ Lpl::Application.routes.draw do
 
   match "blog" => "blog#index", as: :blog
   match 'blog/:id/' => "blog#show", :as => :article
+  match "competiciones" => "competitions#index", as: :competitions
+  match "competiciones/:id" => "competitions#show", as: :competition
   root to: "blog#index"
 
   match "normativa" => "static_pages#rules", as: :rules
@@ -17,6 +19,7 @@ Lpl::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "/admin" do
+    resources :tournaments
     resources :posts
     match 'publish_post/:id' => 'posts#publish_post', as: :published_post
     match 'unpublish_post/:id' => 'posts#unpublish_post', as: :unpublished_post

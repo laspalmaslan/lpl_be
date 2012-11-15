@@ -27,6 +27,7 @@ gem 'pg'
 group :test do
   gem "rspec-rails", :group => [:test, :development]
   gem 'faker'
+  #html parser for all actions on the pages.
   gem 'capybara-firebug'
   gem "factory_girl_rails"
   gem "capybara"

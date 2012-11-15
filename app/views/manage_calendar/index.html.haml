@@ -11,28 +11,24 @@
 
   - @days.each do |day|
     %tr
-      %th
-        = day.day_date
-      %th
+      %td
+        = day.day_date.strftime("%d-%m-%Y")
+      %td
         - if day.events.present?
           - day.events.each do |event|
             = event.event_time.strftime("%H:%M")
             %br
             %p
               ______
-      %th
+      %td
         - if day.events.present?
           - day.events.each do |event|
             = event.description
             %br
             %p
               _____
-      %th
+      %td
         = link_to edit_manage_calendar_path(day.id), class: "btn btn-primary with-tooltip", title: "Editar Día" do
           %i.icon-pencil
         = link_to destroy_manage_calendar_path(day.id), class: "btn btn-danger with-tooltip", method: :delete, data: { confirm: '¿Estas seguro de eliminar este día?' }, title: "Eliminar Día" do
           %i.icon-trash
-.span2.offset5
-  = link_to new_manage_calendar_path, class: "btn btn-large" do
-    %i.icon-plus
-    Nuevo día
