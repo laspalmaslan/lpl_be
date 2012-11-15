@@ -1,15 +1,9 @@
-%p#notice= notice
-
 %p
   %b Game:
   = @tournament.game
 %p
   %b Description:
-  = @tournament.description
+  = @tournament.description.html_safe
 %p
   %b Award:
   = @tournament.award
-
-= link_to 'Edit', edit_tournament_path(@tournament)
-\|
-= link_to 'Back', tournaments_path

@@ -1,16 +1,13 @@
-%h1 Listing tournaments
-
+%h2 Juegos PC
 %table.table.table-bordered.table-striped.table-hover
   %tr
     %th Juego
-    %th Descripción
     %th Premio
     %th Acciones
 
   - @computer_games.each do |tournament|
     %tr
-      %td= tournament.game
-      %td= tournament.description
+      %td= link_to tournament.game, tournament_path(tournament.id)
       %td= tournament.award
       %td
         .btn-group
@@ -19,17 +16,16 @@
           = link_to tournament, method: :delete, data: { confirm: '¿Estas seguro de eliminar este torneo?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
             %i.icon-trash
 
+%h2 Juegos Consola
 %table.table.table-bordered.table-striped.table-hover
   %tr
     %th Juego
-    %th Descripción
     %th Premio
     %th Acciones
 
-  - @station_games.each do |tournament|
+  - @satation_games.each do |tournament|
     %tr
-      %td= tournament.game
-      %td= tournament.description
+      %td= link_to tournament.game, tournament_path(tournament.id)
       %td= tournament.award
       %td
         .btn-group

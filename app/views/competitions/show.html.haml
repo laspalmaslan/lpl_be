@@ -2,7 +2,7 @@
   %header
     .title.pull-left
       %strong
-        = link_to @tournament.game, competitions_path(@tournament.id)
+        = @tournament.game
     .social.pull-right
       = content_tag :div, "",class: "twitter", data: {text: @tournament.game, url: competitions_path(@tournament.id)}
       = content_tag :div, "",class: "facebook", data: {text: @tournament.game, url: competitions_path(@tournament.id)}
