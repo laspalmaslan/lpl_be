@@ -4,7 +4,7 @@
       %ul.span4
         %li.span12
           = day.day_date.strftime("%d/%m/%Y")
-        - day.events.each do |event|
+        - day.events.order('event_time').each do |event|
           .span10.eventspan
             %li.span10
               .span4
