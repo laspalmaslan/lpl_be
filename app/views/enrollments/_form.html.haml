@@ -1,0 +1,14 @@
+= simple_form_for(@enrollment) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :dni_n
+    = f.input :dni_l
+    = f.input :birt
+    = f.input :nick
+    = f.input :hardware
+
+  .form-actions
+    = f.button :submit

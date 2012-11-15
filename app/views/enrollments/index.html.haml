@@ -1,0 +1,31 @@
+%h1 Listing enrollments
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Dni n
+    %th Dni l
+    %th Birt
+    %th Nick
+    %th Hardware
+    %th
+    %th
+    %th
+
+  - @enrollments.each do |enrollment|
+    %tr
+      %td= enrollment.first_name
+      %td= enrollment.last_name
+      %td= enrollment.dni_n
+      %td= enrollment.dni_l
+      %td= enrollment.birt
+      %td= enrollment.nick
+      %td= enrollment.hardware
+      %td= link_to 'Show', enrollment
+      %td= link_to 'Edit', edit_enrollment_path(enrollment)
+      %td= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Enrollment', new_enrollment_path
