@@ -14,16 +14,18 @@
         %ul.nav.pull-left
           %li
             .link
-              =link_to root_path, class: (@current_controller == 'blog' ? "active" : nil), id: "Notricias" do
+              =link_to root_path, class: (@current_controller == 'blog' ? "active with-tooltip" : "with-tooltip"), id: "Noticias", data: {placement: "bottom"}, rel: "tooltip", title: "Noticias" do
                 %i.icon-align-justify
-            .title
-              Noticias
           %li
             .link
-              =link_to calendar_path, class: (@current_controller == 'calendar' ? "active" : nil) do
+              =link_to calendar_path, class: (@current_controller == 'calendar' ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Programa" do
                 %i.icon-calendar
-            .title
-              Eventos
+              
+          %li
+            .link
+              =link_to competitions_path, class: (@current_controller == 'competitions' ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Competiciones" do
+                %i.icon-trophy
+              
         %ul.slide-control.pull-right
           %li
             %div.active 

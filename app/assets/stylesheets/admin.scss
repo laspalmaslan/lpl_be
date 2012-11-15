@@ -1,0 +1,56 @@
+@import "bourbon";
+@import "bootstrap";
+@import "font-awesome";
+
+//overwrite bootstrap
+.navbar {
+  .nav {
+    li{
+      .dropdown-toggle {
+        .caret{
+          border-top-color: $textColor;
+        }
+      }
+    }
+    li.active{
+      .dropdown-toggle {
+        .caret{
+          border-top-color: $white;
+        }
+      }
+    }
+  }
+}
+.navbar .container {
+  width: 940px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.table{
+  tr{
+    td, th{
+      text-align:center
+    }
+  }
+}
+
+// general
+
+//calendar format
+
+.row-fluid .span6{
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 8px;
+}
+// forms
+
+.form-inputs {
+  input, textarea, .cke_skin_kama {
+    width: 100%;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    width:auto;
+  }
+}

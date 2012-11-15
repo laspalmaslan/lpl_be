@@ -113,6 +113,7 @@ header{
         margin-top: 8px; 
         float:left;
         color: transparent;
+        position: relative;
         &:hover{
           color: $white;
         }
@@ -140,12 +141,6 @@ header{
               color:$white;
             }
           }
-        }
-        .title{
-          background: transparent;
-          text-align: center;
-          font-size:20px;
-          
         }
       }
     }
@@ -317,4 +312,8 @@ form.custom-form{
   }
   padding-left: 16px;
 }
+// Competititons
 
+.main {
+  margin-top: 25px;
+}

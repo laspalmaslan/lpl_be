@@ -1,0 +1,35 @@
+%h2 Juegos PC
+%table.table.table-bordered.table-striped.table-hover
+  %tr
+    %th Juego
+    %th Premio
+    %th Acciones
+
+  - @computer_games.each do |tournament|
+    %tr
+      %td= link_to tournament.game, tournament_path(tournament.id)
+      %td= tournament.award
+      %td
+        .btn-group
+          = link_to edit_tournament_path(tournament), class: "btn btn-primary with-tooltip" , :title => "Editar" do
+            %i.icon-pencil
+          = link_to tournament, method: :delete, data: { confirm: '¿Estas seguro de eliminar este torneo?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+            %i.icon-trash
+
+%h2 Juegos Consola
+%table.table.table-bordered.table-striped.table-hover
+  %tr
+    %th Juego
+    %th Premio
+    %th Acciones
+
+  - @satation_games.each do |tournament|
+    %tr
+      %td= link_to tournament.game, tournament_path(tournament.id)
+      %td= tournament.award
+      %td
+        .btn-group
+          = link_to edit_tournament_path(tournament), class: "btn btn-primary with-tooltip" , :title => "Editar" do
+            %i.icon-pencil
+          = link_to tournament, method: :delete, data: { confirm: '¿Estas seguro de eliminar este torneo?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+            %i.icon-trash

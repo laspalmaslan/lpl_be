@@ -1,0 +1,16 @@
+= simple_form_for(@tournament) do |f|
+  - if @tournament.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@tournament.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @tournament.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-inputs
+    = f.input :game, label: "Nombre del juego"
+    = f.input :description, :as => :ckeditor, :input_html => { :toolbar => 'Full' }, label: "Descripción"
+    = f.input :award, label: "Premios"
+    = f.input :pc, label: "Competición de ordenador?"
+
+  .form-actions
+    = f.button :submit
