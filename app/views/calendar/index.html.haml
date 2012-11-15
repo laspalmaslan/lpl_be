@@ -2,7 +2,7 @@
   - @days.each do |day|
     %ul.span4
       %li.span12
-        = day.day_date
+        = day.day_date.strftime("%d/%m/%Y")
       - day.events.each do |event|
         .span10.eventspan
           %li.span10
