@@ -1,4 +1,4 @@
-.row-fluid.mycalendar
+-if @days.count > 0
   - @days.each do |day|
     %ul.span4
       %li.span12
@@ -10,3 +10,5 @@
               = event.event_time.strftime("%H:%M")
             .span8  
               = event.description
+-else
+  Lo sentimos aun no esta confirmado el programa, lo pondremos lo antes posible.
