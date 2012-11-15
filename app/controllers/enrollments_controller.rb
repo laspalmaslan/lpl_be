@@ -1,6 +1,4 @@
 class EnrollmentsController < ApplicationController
-  # GET /enrollments
-  # GET /enrollments.json
   def index
     @enrollments = Enrollment.all
 

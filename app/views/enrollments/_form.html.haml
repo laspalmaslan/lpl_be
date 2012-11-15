@@ -1,14 +1,29 @@
-= simple_form_for(@enrollment) do |f|
-  = f.error_notification
+%section.main.row
+  = simple_form_for(@enrollment) do |f|
+    = f.error_notification
 
-  .form-inputs
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :dni_n
-    = f.input :dni_l
-    = f.input :birt
-    = f.input :nick
-    = f.input :hardware
+    .form-inputs
+      .full-name
+        .span6
+          = f.input :first_name, label: "Nombre", input_html: { class: 'span6' }
+        .span6
+          = f.input :last_name, label: "Apellidos", input_html: { class: 'span6' }
+      .personal-id
+        .span3
+          = f.input :dni_n, label: "Numeración del DNI", input_html: { class: 'span3' }
+        .span3
+          = f.input :dni_l, label: "Letra del DNI", input_html: { class: 'span1' }
+      .birt
+        .span12
+          = f.input :birt, label: "Fecha de nacimiento", input_html: { class: 'span2' }
+      .email
+        .span12
+          = f.input :email, label: "Email de contacto"
+      .extra
+        .span6
+          = f.input :nick
+        .span12
+          = f.input :hardware, label: "Dispositivos electrónicos (torre, portatil, consola, ...)", input_html: { class: 'span12' }
 
-  .form-actions
-    = f.button :submit
+    .form-actions.span12
+      = f.button :submit, "Realizar inscripción"
