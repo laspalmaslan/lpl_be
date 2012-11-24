@@ -21,19 +21,16 @@
           = f.input :email, label: "Email de contacto", input_html: { class: 'span3' }
       .pc_games
         .span12
-          .description Puedes seleccionar 2 competiciones de ordenador como máximo:
-          .checkboxes
-            = f.collection_check_boxes :pc_tournamens, Tournament.where(pc: true), :id, :game
+          = f.association :tournaments, collection: Tournament.where(pc: true), :label_method => :game, :value_method => :id, as: :check_boxes, label: "Puedes seleccionar 2 competiciones de ordenador como máximo:" 
       .video_games
         .span12
-          .description Puedes seleccionar 2 competiciones de ordenador como máximo:
-          .checkboxes
-            = f.collection_check_boxes :video_game_tournamens, Tournament.where(pc: false), :id, :game
+          = f.association :tournaments,  collection: Tournament.where(pc: false), :label_method => :game, :value_method => :id, as: :check_boxes, label: "Puedes seleccionar 2 competiciones de consola como máximo:"
       .extra
         .span6
           = f.input :nick, label: "Nick o pseudonimo:", input_html: { class: 'span3' }
         .span12
-          = f.input :add_clan, label: "Si quieres sentarte con tus amigos, pon aquí el nombre de tu equipo (asegúrate que todos ponen el mismo exactamente)"
+          = f.simple_fields_for :clan do |c|
+            = c.input :name, label: "Si quieres sentarte con tus amigos, pon aquí el nombre de tu equipo (asegúrate que todos ponen el mismo exactamente)"
         .span12
           = f.input :hardware, label: "Dispositivos electrónicos (torre, portatil, consola, ...)", input_html: { class: 'span12' }
 
