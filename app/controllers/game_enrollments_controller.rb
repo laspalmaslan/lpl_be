@@ -12,6 +12,7 @@ class GameEnrollmentsController < ApplicationController
 
   def create
     @enrollment = Enrollment.new(params[:enrollment])
+    @enrollment.etype = Etype.find_by_name('Consolas')
 
     respond_to do |format|
       if @enrollment.save

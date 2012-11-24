@@ -35,4 +35,12 @@ class Enrollment < ActiveRecord::Base
       errors.add(:tournaments, "No puedes incribirte en mas de dos competiciones de consola.")
     end
   end
+
+  def pay
+    self.update_attribute(:paid_at, Time.now)
+  end
+
+  def unpay
+    self.update_attribute(:paid_at, nil)
+  end
 end

@@ -46,6 +46,17 @@
                 %ul.dropdown-menu
                   %li
                     =link_to "Lista de admins", admins_list_path
+              %li{class: ((@current_controller == 'enrollments' or @current_controller == 'game_enrollments') ? "dropdown active" : "dropdown")}
+                %a.dropdown-toggle{data: {toggle: "dropdown"}}
+                  Inscripciones
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    =link_to "Sin confirmar", enrollments_path
+                  %li
+                    =link_to "Nueva tipo LAN", new_enrollment_path
+                  %li
+                    =link_to "Nueva tipo consolas", game_enrollments_new_path
               %li{class: "dropdown"}
                 %a.dropdown-toggle{data: {toggle: "dropdown"}}
                   = current_admin.email

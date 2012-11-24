@@ -16,3 +16,7 @@
             %i.icon-pencil
           = link_to enrollment, method: :delete, data: { confirm: '¿Estas seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
             %i.icon-trash
+          = link_to enrollment, method: :delete, data: { confirm: '¿Estas seguro de que este usuario ha pagado?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+            %i €
+          = link_to enrollment, method: :delete, data: { confirm: '¿Estas seguro de que este usuario no ha pagado?' }, class: "btn btn-success with-tooltip" , :title => "Borrar" do
+            %i €
