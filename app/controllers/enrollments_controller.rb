@@ -1,4 +1,6 @@
 class EnrollmentsController < ApplicationController
+  before_filter :authenticate_admin!
+  layout "admin", except: :show
   def index
     @enrollments = Enrollment.all
 
