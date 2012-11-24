@@ -1,27 +1,14 @@
 %p#notice= notice
+.span3
+  %strong nombre de usuario: 
+  = @enrollment.full_name
+.span3
+  %strong Dni:
+  = @enrollment.dni
+.span3
+  %strong Edad:
+  = @enrollment.age
 
-%p
-  %b First name:
-  = @enrollment.first_name
-%p
-  %b Last name:
-  = @enrollment.last_name
-%p
-  %b Dni n:
-  = @enrollment.dni_n
-%p
-  %b Dni l:
-  = @enrollment.dni_l
-%p
-  %b Birt:
-  = @enrollment.birt
-%p
-  %b Nick:
-  = @enrollment.nick
-%p
-  %b Hardware:
-  = @enrollment.hardware
 
-= link_to 'Edit', edit_enrollment_path(@enrollment)
-\|
-= link_to 'Back', enrollments_path
+
+= link_to 'Editar', edit_enrollment_path(@enrollment)
