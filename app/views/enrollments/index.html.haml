@@ -1,31 +1,18 @@
-%h1 Listing enrollments
-
-%table
+%table.table.table-bordered.table-striped.table-hover
   %tr
-    %th First name
-    %th Last name
-    %th Dni n
-    %th Dni l
-    %th Birt
-    %th Nick
-    %th Hardware
-    %th
-    %th
-    %th
+    %th Nombre
+    %th Dni
+    %th Edad
+    %th Acciones
 
   - @enrollments.each do |enrollment|
     %tr
-      %td= enrollment.first_name
-      %td= enrollment.last_name
-      %td= enrollment.dni_n
-      %td= enrollment.dni_l
-      %td= enrollment.birt
-      %td= enrollment.nick
-      %td= enrollment.hardware
-      %td= link_to 'Show', enrollment
-      %td= link_to 'Edit', edit_enrollment_path(enrollment)
-      %td= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Enrollment', new_enrollment_path
+      %td= enrollment.full_name
+      %td= enrollment.dni
+      %td= enrollment.age
+      %td
+        .btn-group
+          = link_to edit_enrollment_path(enrollment), class: "btn btn-primary with-tooltip" , :title => "Editar" do
+            %i.icon-pencil
+          = link_to enrollment, method: :delete, data: { confirm: '¿Estas seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+            %i.icon-trash

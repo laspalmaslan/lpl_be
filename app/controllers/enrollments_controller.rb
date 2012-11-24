@@ -1,6 +1,6 @@
 class EnrollmentsController < ApplicationController
   before_filter :authenticate_admin!
-  layout "admin", except: :show
+  layout "admin"
   def index
     @enrollments = Enrollment.all
 
@@ -10,8 +10,6 @@ class EnrollmentsController < ApplicationController
     end
   end
 
-  # GET /enrollments/1
-  # GET /enrollments/1.json
   def show
     @enrollment = Enrollment.find(params[:id])
 

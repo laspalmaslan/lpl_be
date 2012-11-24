@@ -9,6 +9,22 @@ class Enrollment < ActiveRecord::Base
   validate :video_game_count
   accepts_nested_attributes_for :clan
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
+  def age
+    age = Date.today.years_ago(self.birt.year).year
+    if self.birt.day < Date.today.day and self.birt.month < Date.today.month
+      age -= 1
+    end
+    age
+  end
+
+  def dni
+    self.dni_n.to_s + self.dni_l
+  end
+
   def pc_count
     if self.tournaments.where(pc: true).count >= 2
       errors.add(:pc_tournamens, "No puedes incribirte en mas de dos competiciones de pc.")
