@@ -23,6 +23,7 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments/new.json
   def new
     @enrollment = Enrollment.new
+    @enrollment.build_clan
 
     respond_to do |format|
       format.html # new.html.erb
