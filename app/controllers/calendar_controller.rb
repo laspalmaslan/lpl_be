@@ -1,5 +1,5 @@
 class CalendarController < ApplicationController
   def index
-    @days = Day.all
+    @days = Day.order('day_date')
   end
 end

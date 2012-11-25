@@ -10,7 +10,7 @@ Lpl::Application.routes.draw do
   match "competiciones" => "competitions#index", as: :competitions
   match "competiciones/:id" => "competitions#show", as: :competition
 
-
+  match "normativa" => "static_pages#rules", as: :rules
   match "calendar" => "calendar#index", as: :calendar
 
   # The priority is based upon order of creation:
