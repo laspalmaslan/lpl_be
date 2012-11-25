@@ -1,6 +1,7 @@
 class Enrollment < ActiveRecord::Base
   attr_accessible :birt, :dni_l, :dni_n, :first_name, :hardware, :last_name, :nick, :email, :clan_attributes, :tournament_ids
   belongs_to :clan
+  belongs_to :etype
   has_many :participations
   has_many :tournaments, through: :participations
   validates_presence_of :birt, :dni_l, :dni_n, :first_name, :last_name, :email

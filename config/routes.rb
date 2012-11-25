@@ -40,6 +40,9 @@ Lpl::Application.routes.draw do
     post "game_enrollments/create"
 
     resources :enrollments
+    match 'enrollment_paid/:id' => 'enrollments#paid', as: :enrollment_paid
+    match 'enrollment_unpaid/:id' => 'enrollments#unpaid', as: :enrollment_unpaid
+
   end
   root to: "blog#index"
 end

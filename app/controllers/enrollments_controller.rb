@@ -1,8 +1,9 @@
+# coding: UTF-8
 class EnrollmentsController < ApplicationController
   before_filter :authenticate_admin!
   layout "admin"
   def index
-    @enrollments = Enrollment.all
+    @enrollments = Enrollment.where(paid_at: nil).order('updated_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +45,7 @@ class EnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_to @enrollment, notice: 'Enrollment was successfully created.' }
+        format.html { redirect_to enrollments_path, notice: 'Ya estas inscrito mira tu correo (Já casi, eres admin a ti ni agua).' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class EnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.update_attributes(params[:enrollment])
-        format.html { redirect_to @enrollment, notice: 'Enrollment was successfully updated.' }
+        format.html { redirect_to enrollments_path, notice: 'Inscripción modificada.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -78,6 +79,26 @@ class EnrollmentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to enrollments_url }
       format.json { head :no_content }
+    end
+  end
+  def paid
+    @enrollment = Enrollment.find(params[:id])
+    respond_to do |format|
+      if @enrollment.pay
+        format.html { redirect_to enrollments_path, notice: 'Inscripción verificada.' }
+      else
+        format.html { redirect_to enrollments_path, notice: 'Inscripción no verificada fallo inesperado.' }
+      end
+    end
+  end
+  def unpaid
+    @enrollment = Enrollment.find(params[:id])
+    respond_to do |format|
+      if @enrollment.unpay
+        format.html { redirect_to enrollments_path, notice: 'Inscripción cancelada.' }
+      else
+        format.html { redirect_to enrollments_path, notice: 'La cancelación falló.' }
+      end
     end
   end
 end
