@@ -4,6 +4,7 @@
     %th Dni
     %th Edad
     %th Acciones
+    %th Tipo
 
   - @enrollments.each do |enrollment|
     %tr
@@ -16,5 +17,6 @@
             %i.icon-pencil
           = link_to enrollment, method: :delete, data: { confirm: '¿Estas seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
             %i.icon-trash
-          = link_to enrollment_paid_path(enrollment.id), method: :delete, data: { confirm: '¿Estas seguro de que este usuario ha pagado?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+          = link_to enrollment_paid_path(enrollment.id), method: :delete, data: { confirm: '¿Estas seguro de que este usuario ha pagado?' }, class: "btn btn-danger with-tooltip" , :title => "Pagado" do
             %i €
+      %td= enrollment.etype.name
