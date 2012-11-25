@@ -68,7 +68,7 @@ Lpl::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address        => 'mail.ion6.net',
-    :port           => '465',
+    :port           => '26',
     :authentication => :plain,
     :user_name      => ENV['E-USERNAME'],
     :password       => ENV['E-PASSWORD'],
