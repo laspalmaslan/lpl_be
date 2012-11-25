@@ -7,4 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-admin = Admin.create(email: "admin@lasplamaslan.com", password: "changethis").activate
+admin = Admin.create(email: "admin@laspalmaslan.com", password: "changethis").activate
+Etype.create([{ name: 'LAN', price: 30 }, { name: 'Consolas', price: 10}])
+

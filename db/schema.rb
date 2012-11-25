@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121113054541) do
+ActiveRecord::Schema.define(:version => 20121124223523) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -48,8 +48,37 @@ ActiveRecord::Schema.define(:version => 20121113054541) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "clans", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "days", :force => true do |t|
     t.date     "day_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "enrollments", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "dni_n"
+    t.string   "dni_l"
+    t.date     "birt"
+    t.string   "nick"
+    t.text     "hardware"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "email"
+    t.integer  "clan_id"
+    t.integer  "etype_id"
+    t.date     "paid_at"
+  end
+
+  create_table "etypes", :force => true do |t|
+    t.string   "name"
+    t.decimal  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -60,6 +89,13 @@ ActiveRecord::Schema.define(:version => 20121113054541) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "day_id"
+  end
+
+  create_table "participations", :force => true do |t|
+    t.integer  "enrollment_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "posts", :force => true do |t|

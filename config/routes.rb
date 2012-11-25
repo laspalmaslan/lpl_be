@@ -2,13 +2,13 @@ require 'ckeditor/engine'
 
 Lpl::Application.routes.draw do
 
+
   devise_for :admins
 
   match "blog" => "blog#index", as: :blog
   match 'blog/:id/' => "blog#show", :as => :article
   match "competiciones" => "competitions#index", as: :competitions
   match "competiciones/:id" => "competitions#show", as: :competition
-  root to: "blog#index"
 
   match "normativa" => "static_pages#rules", as: :rules
   match "calendar" => "calendar#index", as: :calendar
@@ -34,5 +34,15 @@ Lpl::Application.routes.draw do
     match "manage_admins" => 'manage_admins#activations', as: :admins_list
     match "manage_admins/activate/:id" => 'manage_admins#activate', as: :activate_admin
     match "manage_admins/deactivate/:id" => 'manage_admins#deactivate', as: :deactivate_admin
+    get "game_enrollments/new"
+    get "game_enrollments/edit"
+    put "game_enrollments/update"
+    post "game_enrollments/create"
+
+    resources :enrollments
+    match 'enrollment_paid/:id' => 'enrollments#paid', as: :enrollment_paid
+    match 'enrollment_unpaid/:id' => 'enrollments#unpaid', as: :enrollment_unpaid
+
   end
+  root to: "blog#index"
 end

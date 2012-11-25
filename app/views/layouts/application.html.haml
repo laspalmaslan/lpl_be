@@ -25,6 +25,10 @@
             .link
               =link_to competitions_path, class: (@current_controller == 'competitions' ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Competiciones" do
                 %i.icon-trophy
+          %li
+            .link
+              =link_to rules_path, class: ((@current_controller == 'static_pages' and @current_action == 'rules') ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Normativa" do
+                %i.icon-legal
               
         %ul.slide-control.pull-right
           %li

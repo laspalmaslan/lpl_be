@@ -1,0 +1,14 @@
+%p#notice= notice
+.span3
+  %strong nombre de usuario: 
+  = @enrollment.full_name
+.span3
+  %strong Dni:
+  = @enrollment.dni
+.span3
+  %strong Edad:
+  = @enrollment.age
+
+
+
+= link_to 'Editar', edit_enrollment_path(@enrollment)

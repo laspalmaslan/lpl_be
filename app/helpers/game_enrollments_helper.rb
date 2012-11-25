@@ -1,0 +1,2 @@
+module GameEnrollmentsHelper
+end

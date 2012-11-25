@@ -47,10 +47,43 @@
 // forms
 
 .form-inputs {
-  input, textarea, .cke_skin_kama {
-    width: 100%;
+  textarea, .cke_skin_kama {
+    width: 98.5%;
   }
   input[type="checkbox"], input[type="radio"] {
     width:auto;
   }
+}
+#enrollment_last_name {
+  width: 414px;
+}
+form {
+  .description {
+    margin-top: 5px;
+  }
+  .checkboxes {
+    margin-top: 5px;
+    input {
+      margin: 0;
+    }
+    label {
+      display: inline;
+      margin-left: 2px;
+    }
+    .form-inputs {
+      .flields {
+        fieldset{
+          textarea {
+            width: 88.5%;
+          }
+        }
+      }
+    }
+  }
+}
+//fixed chrome up/down arrows
+form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
