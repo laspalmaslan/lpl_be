@@ -44,7 +44,7 @@ class EnrollmentsController < ApplicationController
     @enrollment.etype = Etype.find_by_name('LAN')
 
     respond_to do |format|
-      if @enrollment.save
+      if @enrollment.save and params[]
         format.html { redirect_to enrollments_path, notice: 'Ya estas inscrito mira tu correo (Já casi, eres admin a ti ni agua).' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
