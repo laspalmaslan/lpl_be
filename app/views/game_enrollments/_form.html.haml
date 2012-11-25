@@ -1,5 +1,5 @@
 %section.main.row
-  = simple_form_for(@enrollment, url: (@enrollment.new_record?) ? g_enrollment_create_path : g_enrollment_update_path(@enrollment)) do |f|
+  = simple_form_for(@enrollment, url: g_enrollment_update_path(@enrollment)) do |f|
     = f.error_notification
 
     .form-inputs

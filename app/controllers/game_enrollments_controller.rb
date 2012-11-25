@@ -2,6 +2,7 @@ class GameEnrollmentsController < ApplicationController
   before_filter :authenticate_admin!
   layout "admin"
   def new
+    @mierda = "casi"
     @enrollment = Enrollment.new
     @enrollment.build_clan
   end
@@ -16,7 +17,7 @@ class GameEnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_to game_enrollments_path, notice: 'Enrollment was successfully created.' }
+        format.html { redirect_to enrollments_path, notice: 'Enrollment was successfully created.' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
         format.html { render action: "new" }
@@ -30,7 +31,7 @@ class GameEnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.update_attributes(params[:enrollment])
-        format.html { redirect_to game_enrollments_path, notice: 'Enrollment was successfully updated.' }
+        format.html { redirect_to enrollments_path, notice: 'Enrollment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
