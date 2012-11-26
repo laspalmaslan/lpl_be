@@ -1,7 +1,7 @@
 # coding: UTF-8
 
 class EnrollmentsMailer < ActionMailer::Base
-  default from: "info@ion6.com"
+  default from: "info@ion6.net"
   def steps(enrollment)
     @enrollment = enrollment
     mail(:to => enrollment.email, :subject => "Pasos para completar inscripción - Las Palmas LAN 2012")
