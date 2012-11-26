@@ -1,35 +1,53 @@
 !!!5
-%h2
-  %u
-    %strong= "Correo para inscritos (antes de llenar las 350 primeras plazas)"
+%div
+  = "Hola #{@enrollment.first_name},"
 
-%br= "Hola #{@enrollment.first_name},"
+%div
+  ¡Ya casi has terminado el proceso de inscripción para Las Palmas LAN 2012!
 
-%br= "¡Ya casi has terminado el proceso de inscripción para Las Palmas LAN 2012!"
-
-%p= "Ya tenemos todos tus datos, y lo único que falta para poder formalizar tu inscripción y darte plaza en el evento, es que pagues los #{@enrollment.etype.decimal} euros que corresponden a la modalidad de inscripción que has solicitado. Recordarte que no podemos reservar tu plaza por más de dos días si no efectúas el pago, ya que es muy posible que haya otros participantes en lista de espera deseando asistir al evento."
-
-%br= "Para formalizar el pago, tienes dos opciones:"
+%p 
+  Ya tenemos todos tus datos, y lo único que falta para poder formalizar tu inscripción y darte plaza en el evento, es que pagues los 
+  = @enrollment.etype.price
+  euros que corresponden a la modalidad de inscripción que has solicitado. Recordarte que no podemos reservar tu plaza por más de dos 
+  días si no efectúas el pago, ya que es muy posible que haya otros participantes en lista de espera deseando asistir al evento.
+%p 
+  Para formalizar el pago, tienes dos opciones:
   %ul
-    %li= "a) Hacer una transferencia bancaria a la cuenta 2100-5904-64-0200115180 por valor de #{@enrollment.etype.decimal} euros, introduciendo en el concepto de la transferencia “LPL2012” seguido de tu dirección de correo electrónico. A continuación, mándanos por correo electrónico a "
-      %u
-        =link_to "inscripciones@ion6.net"
-      "el comprobante de la transferencia (ya que las transferencias tardan unos días en llegarnos, así podremos formalizar tu reserva cuanto antes). Si lo prefieres, también puedes traer el comprobante en papel, a Inexus Informática, junto con tu DNI, en la calle Pérez del Toro, nº 29, y formalizaremos tu reserva al momento."
+    %li
+      a) Hacer una transferencia bancaria a la cuenta 2100-5904-64-0200115180 por valor de 
+      = @enrollment.etype.price
+      euros, introduciendo en el concepto de la transferencia "LPL2012" seguido de tu dirección de correo electrónico. A continuación, 
+      mándanos por correo electrónico a
+      =link_to "inscripciones@ion6.net"
+      el comprobante de la transferencia (ya que las transferencias tardan unos días en llegarnos, así podremos formalizar tu reserva cuanto antes). 
+      Si lo prefieres, también puedes traer el comprobante en papel, a Inexus Informática, junto con tu DNI, en la calle Pérez del Toro, nº 29, 
+      y formalizaremos tu reserva al momento."
 
-    %li= "b) Hacer un ingreso en la oficina de La Caixa que está situada en la avenida Pintor Felo Monzón, en Las Palmas de Gran Canaria, a la cuenta 2100-5904-64-0200115180 por valor de <DineroCorrespondienteAModalidad> euros, introduciendo en el concepto de la transferencia “LPL2012” seguido de tu DNI."
+    %li 
+      b) Hacer un ingreso en la oficina de La Caixa que está situada en la avenida Pintor Felo Monzón, en Las Palmas de Gran Canaria, 
+      a la cuenta 2100-5904-64-0200115180 por valor de  
+      = @enrollment.etype.price
+      euros, introduciendo en el concepto de la transferencia "LPL2012" seguido de tu dirección de correo electrónico.
 
-    %li= "c) Llevar los <DineroCorrespondienteAModalidad> euros en mano a Inexus Informática, junto con tu DNI. Formalizaremos tu reserva al instante."
-
-
-%p= "Una vez se haya formalizado tu reserva, deberías comprobar el correo con el que te diste de alta. Tendrás una confirmación de que has obtenido tu plaza. En caso de que no te llegara, por favor, contacta con nosotros cuanto antes en "
-  %u
-    =link_to "info@ion6.net"
-  " o llama por teléfono a 928242270, y lo intentaremos solucionar."
-
-%p= "Por último, recordar a aquellos participantes menores que, siguiendo la normativa, tienen que presentar la autorización paterna en el momento de la entrada al evento, o venir acompañados de un adulto, en caso de haber nacido después del 1 de enero de 1997."
-
-%p= "Muchas gracias por confiar en nosotros, esperamos que disfrutes del evento que con tanta ilusión (y sudor) hemos organizado."
+    %li 
+      c) Llevar los
+      =link_to "inscripciones@ion6.net"
+      euros en mano a Inexus Informática, junto con tu DNI. Formalizaremos tu reserva al instante.
 
 
-%br= "El equipo de Las Palmas LAN 2012"
+%p 
+  Una vez se haya formalizado tu reserva, deberías comprobar el correo con el que te diste de alta. Tendrás una confirmación de que has obtenido tu plaza. 
+  En caso de que no te llegara, por favor, contacta con nosotros cuanto antes en
+  =link_to "info@ion6.net"
+  o llama por teléfono a 928242270, y lo intentaremos solucionar.
 
+%p
+  Por último, recordar a aquellos participantes menores que, siguiendo la normativa, tienen que presentar la autorización paterna en el momento de la 
+  entrada al evento, o venir acompañados de un adulto, en caso de haber nacido después del 1 de enero de 1997.
+
+%p 
+  Muchas gracias por confiar en nosotros, esperamos que disfrutes del evento que con tanta ilusión (y sudor) hemos organizado.
+
+
+%div 
+  El equipo de Las Palmas LAN 2012
