@@ -9,6 +9,23 @@ class Enrollment < ActiveRecord::Base
   validate :pc_count
   validate :video_game_count
   accepts_nested_attributes_for :clan
+  after_create :send_steps
+
+  def send_steps
+    if Enrollment.where(paid_at: !nil).count > 400
+      self.send_waiting
+    else
+      EnrollmentsMailer.steps(self).deliver
+    end
+  end
+
+  def send_waiting
+    EnrollmentsMailer.waiting(self).deliver
+  end
+
+  def send_complete
+    EnrollmentsMailer.complete(self).deliver
+  end
 
   def full_name
     "#{self.first_name} #{self.last_name}"
@@ -39,6 +56,7 @@ class Enrollment < ActiveRecord::Base
 
   def pay
     self.update_attribute(:paid_at, Time.now)
+    self.send_complete
   end
 
   def unpay
