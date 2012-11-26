@@ -12,7 +12,7 @@ class Enrollment < ActiveRecord::Base
   after_create :send_steps
 
   def send_steps
-    if Enrollment.where(paid_at: !nil).count > 400
+    if Enrollment.where('paid_at IS NOT NULL').count > 400
       self.send_waiting
     else
       EnrollmentsMailer.steps(self).deliver
