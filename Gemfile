@@ -5,8 +5,6 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -27,7 +25,7 @@ gem 'pg'
 group :test do
   gem "rspec-rails", :group => [:test, :development]
   gem 'faker'
-  #html parser for all actions on the pages.
+  #html parser for all actions on pages.
   gem 'capybara-firebug'
   gem "factory_girl_rails"
   gem "capybara"
@@ -36,8 +34,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
-#Autenticacion sistem 
-gem "devise" 
+#Autenticacion system
+gem "devise"
 #views format
 gem "haml-rails"
 #forms engine
@@ -55,7 +53,7 @@ group :development, :test do
   gem 'sqlite3'
   gem "debugger"
 end
-  
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -65,5 +63,8 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# Para resolver fallo de rake db:create
+# To solve rake db:create problem
 gem 'therubyracer', require: "v8"
+
+# Server unicorn
+gem 'unicorn'
