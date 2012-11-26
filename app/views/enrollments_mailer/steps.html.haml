@@ -1,5 +1,5 @@
 !!!5
-%div
+%p
   = "Hola #{@enrollment.first_name},"
 
 %div
@@ -14,7 +14,7 @@
   Para formalizar el pago, tienes dos opciones:
   %ul
     %li
-      a) Hacer una transferencia bancaria a la cuenta 2100-5904-64-0200115180 por valor de 
+      Hacer una transferencia bancaria a la cuenta 2100-5904-64-0200115180 por valor de 
       = @enrollment.etype.price
       euros, introduciendo en el concepto de la transferencia "LPL2012" seguido de tu dirección de correo electrónico. A continuación, 
       mándanos por correo electrónico a
@@ -24,13 +24,13 @@
       y formalizaremos tu reserva al momento."
 
     %li 
-      b) Hacer un ingreso en la oficina de La Caixa que está situada en la avenida Pintor Felo Monzón, en Las Palmas de Gran Canaria, 
+      Hacer un ingreso en la oficina de La Caixa que está situada en la avenida Pintor Felo Monzón, en Las Palmas de Gran Canaria, 
       a la cuenta 2100-5904-64-0200115180 por valor de  
       = @enrollment.etype.price
       euros, introduciendo en el concepto de la transferencia "LPL2012" seguido de tu dirección de correo electrónico.
 
     %li 
-      c) Llevar los
+      Llevar los
       %a{href: "inscripciones@ion6.net"}
       euros en mano a Inexus Informática, junto con tu DNI. Formalizaremos tu reserva al instante.
 
