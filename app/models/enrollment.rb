@@ -13,7 +13,7 @@ class Enrollment < ActiveRecord::Base
   after_create :send_steps
   validates :dni_n, :length => { :in => 7..8 }, 
                     :numericality => { :only_integer => true }
-  validates :dni_valid?
+  validate :dni_valid?
 
   def dni_valid?
     dni = "TRWAGMYFPDXBNJZSQVHLCKE"[gets.to_i % 23].chr
