@@ -4,12 +4,21 @@ class Enrollment < ActiveRecord::Base
   belongs_to :etype
   has_many :participations
   has_many :tournaments, through: :participations
+
   validates_presence_of :birt, :dni_l, :dni_n, :first_name, :last_name, :email
   validates_uniqueness_of :dni_n, :email
   validate :pc_count
   validate :video_game_count
   accepts_nested_attributes_for :clan
   after_create :send_steps
+  validates :dni_n, :length => { :is => 8 }, 
+                    :numericality => { :only_integer => true }
+  validates :dni_valid?, :on => :create
+
+  def dni_valid?
+       dni = "TRWAGMYFPDXBNJZSQVHLCKE"[gets.to_i % 23].chr
+       self.dni_n == dni
+  end
 
   def send_steps
     if Enrollment.where('paid_at IS NOT NULL').count > 400
@@ -45,12 +54,12 @@ class Enrollment < ActiveRecord::Base
 
   def pc_count
     if self.tournaments.where(pc: true).count >= 2
-      errors.add(:tournaments, "No puedes incribirte en mas de dos competiciones de pc.")
+      errors.add(:tournaments, "No puedes inscribirte en mas de dos competiciones de pc.")
     end
   end
   def video_game_count
     if self.tournaments.where(pc: false).count >= 2
-      errors.add(:tournaments, "No puedes incribirte en mas de dos competiciones de consola.")
+      errors.add(:tournaments, "No puedes inscribirte en mas de dos competiciones de consola.")
     end
   end
 
