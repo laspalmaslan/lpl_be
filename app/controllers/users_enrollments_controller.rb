@@ -19,7 +19,7 @@ class UsersEnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.save 
-        format.html { redirect_to u_enrollment_path, notice: 'Ya estas inscrito mira tu correo (Já casi, eres admin a ti ni agua).' }
+        format.html { redirect_to root_path, notice: 'Ya estas inscrito mira tu correo para finalizar la inscripción.' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
         format.html { render action: "new" }
@@ -41,7 +41,7 @@ class UsersEnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_to u_enrollment_path, notice: 'Enrollment was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Ya estas inscrito mira tu correo para finalizar la inscripción.' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
         format.html { render action: "new" }

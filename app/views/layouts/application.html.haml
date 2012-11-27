@@ -65,4 +65,10 @@
           %span.slide-content
             Streaming, Modding, Torneos, Consolas ...
 
+      -if flash[:notice].present?
+        .alert.alert-success
+          = flash[:notice]
+      -if flash[:error].present?
+        .alert.alert-error
+          = flash[:error] 
       = yield
