@@ -3,7 +3,6 @@ require 'ckeditor/engine'
 Lpl::Application.routes.draw do
 
 
-  get "users_enrollments/index"
 
   devise_for :admins
 
@@ -11,6 +10,7 @@ Lpl::Application.routes.draw do
   match 'blog/:id/' => "blog#show", :as => :article
   match "competiciones" => "competitions#index", as: :competitions
   match "competiciones/:id" => "competitions#show", as: :competition
+  match "inscripciones" => "users_enrollments#index", as: :u_enrollment
 
   match "normativa" => "static_pages#rules", as: :rules
   match "calendar" => "calendar#index", as: :calendar
