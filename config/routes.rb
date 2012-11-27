@@ -3,6 +3,8 @@ require 'ckeditor/engine'
 Lpl::Application.routes.draw do
 
 
+  get "users_enrollments/index"
+
   devise_for :admins
 
   match "blog" => "blog#index", as: :blog
