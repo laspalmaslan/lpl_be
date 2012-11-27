@@ -29,7 +29,7 @@ class UsersEnrollmentsController < ApplicationController
   end
 
 
-# game methods
+  # game methods
   def new_game
     @enrollment = Enrollment.new
     @enrollment.build_clan
