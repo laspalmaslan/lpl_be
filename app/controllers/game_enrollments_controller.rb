@@ -2,7 +2,6 @@ class GameEnrollmentsController < ApplicationController
   before_filter :authenticate_admin!
   layout "admin"
   def new
-    @mierda = "casi"
     @enrollment = Enrollment.new
     @enrollment.build_clan
   end

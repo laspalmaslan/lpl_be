@@ -20,3 +20,5 @@ $ ->
     checkboxValidation()
   $('.pc_games :input').change ->
     checkboxValidation()
+  checkboxValidation()
+

@@ -3,12 +3,19 @@ require 'ckeditor/engine'
 Lpl::Application.routes.draw do
 
 
+
   devise_for :admins
 
   match "blog" => "blog#index", as: :blog
   match 'blog/:id/' => "blog#show", :as => :article
   match "competiciones" => "competitions#index", as: :competitions
   match "competiciones/:id" => "competitions#show", as: :competition
+  # user enrollments
+  match "inscripciones" => "users_enrollments#index", as: :u_enrollment
+  match "inscripciones/new" => "users_enrollments#new", as: :u_enrollment_new
+  match "inscripciones/create" => "users_enrollments#create", as: :u_enrollment_create, via: :post
+  match "inscripciones/game_new" => "users_enrollments#new_game", as: :u_game_enrollment_new
+  match "inscripciones/game_create" => "users_enrollments#create_game", as: :u_game_enrollment_create, via: :post
 
   match "normativa" => "static_pages#rules", as: :rules
   match "calendar" => "calendar#index", as: :calendar
