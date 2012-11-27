@@ -18,7 +18,7 @@ class Enrollment < ActiveRecord::Base
   before_save :uppercase
 
   def uppercase
-    self.dni_l = self.dni.upcase
+    self.dni_l = self.dni_l.upcase
   end
 
   def dni_valid?
