@@ -1,5 +1,5 @@
 %section.main.row
-  = simple_form_for(@enrollment) do |f|
+  = simple_form_for(@enrollment, url: enrollment_edit_path(@enrollment)) do |f|
     = f.error_notification
 
     .form-inputs
@@ -21,7 +21,7 @@
           = f.input :email, label: "Email de contacto", input_html: { class: 'span3' }
       .pc_games
         .span12
-          = f.association :tournaments, collection: Tournament.where(pc: true), :label_method => :game, :value_method => :id, as: :check_boxes, label: "Puedes seleccionar 2 competiciones de ordenador como máximo:" 
+          = f.association :tournaments, collection: Tournament.where(pc: true), :label_method => :game, :value_method => :id, as: :check_boxes, label: "Puedes seleccionar 2 competiciones de ordenador como máximo:"
       .video_games
         .span12
           = f.association :tournaments,  collection: Tournament.where(pc: false), :label_method => :game, :value_method => :id, as: :check_boxes, label: "Puedes seleccionar 2 competiciones de consola como máximo:"
@@ -35,7 +35,7 @@
           = f.input :hardware, label: "Dispositivos electrónicos (torre, portatil, consola, ...)", input_html: { class: 'span12' }
 
     .form-actions.span12
-      Por favor antes de inscribirse lea nuestro 
+      Por favor antes de inscribirse lea nuestro
       = link_to "aviso legal", rules_path
       y si es menor de edad recuerde leer la parte destinada a los menores.
       = f.button :submit, "Aceptar e inscribirse"
