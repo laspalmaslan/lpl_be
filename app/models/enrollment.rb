@@ -13,13 +13,16 @@ class Enrollment < ActiveRecord::Base
   after_create :send_steps
   validates :dni_n, :length => { :in => 7..8 }, 
                     :numericality => { :only_integer => true }
-  validates :dni_l, :length => { :maximum => 1 },
-                    :uniqueness => { :case_sensitive => false }
+  validates :dni_l, :length => { :maximum => 1 }
   validate :dni_valid?
+
+  def uppercase
+    self.dni_l = self.dni.upcase
+  end
 
   def dni_valid?
     dni = "TRWAGMYFPDXBNJZSQVHLCKE"[self.dni_n % 23].chr
-    if self.dni_l != dni.upcase
+    if self.dni_l.upcase != dni.upcase
       errors.add(:dni_n, "DNI no valido")
     end
   end
