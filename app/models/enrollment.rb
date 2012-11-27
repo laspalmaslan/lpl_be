@@ -11,13 +11,15 @@ class Enrollment < ActiveRecord::Base
   validate :video_game_count
   accepts_nested_attributes_for :clan
   after_create :send_steps
-  validates :dni_n, :length => { :is => 8 }, 
+  validates :dni_n, :length => { :in => 7..8 }, 
                     :numericality => { :only_integer => true }
-  validates :dni_valid?, :on => :create
+  validates :dni_valid?
 
   def dni_valid?
-       dni = "TRWAGMYFPDXBNJZSQVHLCKE"[gets.to_i % 23].chr
-       self.dni_n == dni
+    dni = "TRWAGMYFPDXBNJZSQVHLCKE"[gets.to_i % 23].chr
+    if self.dni_n =! dni
+      errors.add("DNI no valido")
+    end
   end
 
   def send_steps
