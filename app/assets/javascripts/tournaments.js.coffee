@@ -20,6 +20,5 @@ $ ->
     checkboxValidation()
   $('.pc_games :input').change ->
     checkboxValidation()
-  if $('.video_games :input').legth > 0
-    checkboxValidation()
+  checkboxValidation()
 
