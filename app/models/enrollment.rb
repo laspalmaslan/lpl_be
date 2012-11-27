@@ -1,5 +1,6 @@
 class Enrollment < ActiveRecord::Base
-  attr_accessible :birt, :dni_l, :dni_n, :first_name, :hardware, :last_name, :nick, :email, :clan_attributes, :tournament_ids
+  attr_accessible :birt, :dni_l, :dni_n, :first_name, :hardware, :last_name, :nick, :email,
+                  :clan_attributes, :tournament_ids, :paid_at
   belongs_to :clan
   belongs_to :etype
   has_many :participations
@@ -9,13 +10,15 @@ class Enrollment < ActiveRecord::Base
   validates_uniqueness_of :dni_n, :email
   validate :pc_count
   validate :video_game_count
-  accepts_nested_attributes_for :clan
-  after_create :send_steps
-  validates :dni_n, :length => { :in => 7..8 }, 
+  validates :dni_n, :length => { :in => 7..8 },
                     :numericality => { :only_integer => true }
   validates :dni_l, :length => { :maximum => 1 },
                     :uniqueness => { :case_sensitive => false }
   validate :dni_valid?
+
+  accepts_nested_attributes_for :clan
+  after_create :send_steps
+  scope :by_date, where('paid_at is not NULL')
 
   def dni_valid?
     dni = "TRWAGMYFPDXBNJZSQVHLCKE"[self.dni_n % 23].chr

@@ -1,0 +1,17 @@
+%table.table.table-bordered.table-striped.table-hover
+  %tr
+    %th Nombre
+    %th Nickname
+    %th Email
+    %th Tipo
+    %th Clan
+    %th Pagado el
+
+  - @enrollments.each do |enrollment|
+    %tr
+      %td= enrollment.full_name
+      %td= enrollment.nick
+      %td= enrollment.email
+      %td= enrollment.etype.name
+      %td= enrollment.clan
+      %td= enrollment.paid_at
