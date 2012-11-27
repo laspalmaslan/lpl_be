@@ -347,3 +347,28 @@ form input[type='number']::-webkit-inner-spin-button {
 .main {
   margin-top: 25px;
 }
+// enrollments
+.enrollments{
+  list-style: none;
+  margin-top: 40px;
+  .enrollment{
+    ul {
+      list-style: none;
+      overflow: hidden;
+      border: solid 2px;
+      border-color: $blue;
+      @include border-radius(8px 8px 8px 8px);
+      height: 100%;
+      li{
+        padding: 10px 10px 10px 10px;
+        border-bottom: 2px solid $blue;
+        &:first-child {
+          text-align:center;
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
