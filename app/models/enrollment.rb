@@ -15,6 +15,7 @@ class Enrollment < ActiveRecord::Base
                     :numericality => { :only_integer => true }
   validates :dni_l, :length => { :maximum => 1 }
   validate :dni_valid?
+  before_save :uppercase
 
   def uppercase
     self.dni_l = self.dni.upcase
