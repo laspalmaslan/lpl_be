@@ -44,6 +44,7 @@ Lpl::Application.routes.draw do
     # enrollments
     resources :enrollments
     match 'enrollment_paid/:id' => 'enrollments#paid', as: :enrollment_paid
+    match 'enrollment_show_paid/show_paid' => 'enrollments#show_paid', as: :show_enrollment_paid
     match 'enrollment_unpaid/:id' => 'enrollments#unpaid', as: :enrollment_unpaid
     match "game_enrollments/new" => "game_enrollments#new", as: :g_enrollment_new
     match "game_enrollments/:id/edit" => "game_enrollments#edit", as: :g_enrollment_edit
