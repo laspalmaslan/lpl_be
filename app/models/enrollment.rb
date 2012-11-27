@@ -14,8 +14,7 @@ class Enrollment < ActiveRecord::Base
   validates :dni_n, :length => { :in => 7..8 }, 
                     :numericality => { :only_integer => true }
   validates :dni_l, :length => { :maximum => 1 }
-  validate :dni_valid?, :on => :create
-  validate :dni_valid?, :on => :edit
+  validate :dni_valid?
 
   def dni_valid?
     dni = "TRWAGMYFPDXBNJZSQVHLCKE"[self.dni_n % 23].chr
