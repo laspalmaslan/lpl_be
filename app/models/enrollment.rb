@@ -18,7 +18,7 @@ class Enrollment < ActiveRecord::Base
   def dni_valid?
     dni = "TRWAGMYFPDXBNJZSQVHLCKE"[self.dni_n % 23].chr
     if self.dni_l =! dni
-      errors.add("DNI no valido")
+      errors.add(:dni_n "DNI no valido")
     end
   end
 
