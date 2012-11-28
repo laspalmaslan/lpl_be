@@ -18,8 +18,8 @@ class UsersEnrollmentsController < ApplicationController
     @enrollment.etype = Etype.find_by_name('LAN')
 
     respond_to do |format|
-      if @enrollment.save 
-        format.html { redirect_to u_enrollments_path, notice: 'Ya estas inscrito mira tu correo (Já casi, eres admin a ti ni agua).' }
+      if @enrollment.save
+        format.html { redirect_to u_enrollments_path, notice: 'Ya estas inscrito. Mira tu correo (Já casi, eres admin a ti ni agua).' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
         format.html { render action: "new" }
@@ -41,7 +41,7 @@ class UsersEnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_to u_enrollments_path, notice: 'Enrollment was successfully created.' }
+        format.html { redirect_to u_enrollments_path, notice: 'Inscripción realizada con éxito.' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
         format.html { render action: "new" }
