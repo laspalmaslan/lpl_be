@@ -2,6 +2,7 @@
 class ManageAdminsController < ApplicationController
   before_filter :authenticate_admin!
   layout "admin"
+
   def activations
     @admins_actived = Admin.where(approved: true)
     @admins_deactived = Admin.where(approved: false)

@@ -61,12 +61,12 @@ class Enrollment < ActiveRecord::Base
 
   def pc_count
     if self.tournaments.where(pc: true).count >= 2
-      errors.add(:tournaments, "No puedes inscribirte en más de dos competiciones de pc.")
+      errors.add(:tournaments, 'No puedes inscribirte en mas de dos competiciones de pc.')
     end
   end
   def video_game_count
     if self.tournaments.where(pc: false).count >= 2
-      errors.add(:tournaments, "No puedes inscribirte en más de dos competiciones de consola.")
+      errors.add(:tournaments, 'No puedes inscribirte en mas de dos competiciones de consola.')
     end
   end
 
