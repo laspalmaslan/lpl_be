@@ -13,13 +13,13 @@
               %i.icon-file
             = link_to edit_post_path(post), class: "btn btn-primary with-tooltip" , :title => "Editar" do
               %i.icon-pencil
-            = link_to post, method: :delete, data: { confirm: '¿Estas seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
+            = link_to post, method: :delete, data: { confirm: '¿Estás seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
               %i.icon-trash
         %td
           - if post.published_at.present?
-            = link_to unpublished_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de despublicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Despublicar" do
+            = link_to unpublished_post_path(post.id), method: :delete, data: { confirm: '¿Estás seguro de despublicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Despublicar" do
               %i.icon-unlock
               = post.published_at
           -else
-            = link_to published_post_path(post.id), method: :delete, data: { confirm: '¿Estas seguro de publicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Publicar" do
+            = link_to published_post_path(post.id), method: :delete, data: { confirm: '¿Estás seguro de publicar este post?' }, class: "btn btn-warning with-tooltip" , :title => "Publicar" do
               %i.icon-lock
