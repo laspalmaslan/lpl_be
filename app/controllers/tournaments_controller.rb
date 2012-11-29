@@ -47,7 +47,7 @@ class TournamentsController < ApplicationController
 
     respond_to do |format|
       if @tournament.save
-        format.html { redirect_to @tournament, notice: 'Tournament was successfully created.' }
+        format.html { redirect_to @tournament, notice: 'Torneo creado con éxito.' }
         format.json { render json: @tournament, status: :created, location: @tournament }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class TournamentsController < ApplicationController
 
     respond_to do |format|
       if @tournament.update_attributes(params[:tournament])
-        format.html { redirect_to @tournament, notice: 'Tournament was successfully updated.' }
+        format.html { redirect_to @tournament, notice: 'Torneo actualizado con éxito.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

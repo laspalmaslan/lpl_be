@@ -2,6 +2,7 @@
 class EnrollmentsController < ApplicationController
   before_filter :authenticate_admin!
   layout "admin"
+
   def index
     @enrollments = Enrollment.where(paid_at: nil).order('updated_at DESC')
 
@@ -44,7 +45,7 @@ class EnrollmentsController < ApplicationController
     @enrollment.etype = Etype.find_by_name('LAN')
 
     respond_to do |format|
-      if @enrollment.save 
+      if @enrollment.save
         format.html { redirect_to enrollments_path, notice: 'Ya estas inscrito mira tu correo (Já casi, eres admin a ti ni agua).' }
         format.json { render json: @enrollment, status: :created, location: @enrollment }
       else
@@ -81,16 +82,24 @@ class EnrollmentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def show_paid
+    @enrollments = Enrollment.by_date
+
+    render :show_paid
+  end
+
   def paid
     @enrollment = Enrollment.find(params[:id])
     respond_to do |format|
       if @enrollment.pay
         format.html { redirect_to enrollments_path, notice: 'Inscripción verificada.' }
       else
-        format.html { redirect_to enrollments_path, notice: 'Inscripción no verificada fallo inesperado.' }
+        format.html { redirect_to enrollments_path, notice: 'Inscripción no verificada, fallo inesperado.' }
       end
     end
   end
+
   def unpaid
     @enrollment = Enrollment.find(params[:id])
     respond_to do |format|

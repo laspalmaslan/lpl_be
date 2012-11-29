@@ -43,15 +43,13 @@ Lpl::Application.routes.draw do
     match "manage_admins/deactivate/:id" => 'manage_admins#deactivate', as: :deactivate_admin
     # enrollments
     resources :enrollments
-    match 'enrollment_paid/:id'         => 'enrollments#paid',        as: :enrollment_paid
-    match 'enrollment_unpaid/:id'       => 'enrollments#unpaid',      as: :enrollment_unpaid
-    match 'enrollments/:id/edit'         => 'enrollments#edit',        as: :enrollment_edit
-    # match "enrollment/:id/upate"        => "enrollments#update",      as: :enrollment_update, via: :put
-    match "game_enrollments/new"        => "game_enrollments#new",    as: :g_enrollment_new
-    match "game_enrollments/:id/edit"   => "game_enrollments#edit",   as: :g_enrollment_edit
-    match "game_enrollments/:id/upate"  => "game_enrollments#update", as: :g_enrollment_update, via: :put
-    match "game_enrollments/create"     => "game_enrollments#create", as: :g_enrollment_create, via: :post
-
+    match 'enrollment_paid/:id' => 'enrollments#paid', as: :enrollment_paid
+    match 'enrollment_show_paid/show_paid' => 'enrollments#show_paid', as: :show_enrollment_paid
+    match 'enrollment_unpaid/:id' => 'enrollments#unpaid', as: :enrollment_unpaid
+    match "game_enrollments/new" => "game_enrollments#new", as: :g_enrollment_new
+    match "game_enrollments/:id/edit" => "game_enrollments#edit", as: :g_enrollment_edit
+    match "game_enrollments/:id/upate" => "game_enrollments#update", as: :g_enrollment_update, via: :put
+    match "game_enrollments/create" => "game_enrollments#create", as: :g_enrollment_create, via: :post
   end
   root to: "blog#index"
 end
