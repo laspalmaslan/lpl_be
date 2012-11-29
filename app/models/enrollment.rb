@@ -51,7 +51,7 @@ class Enrollment < ActiveRecord::Base
 
 
   def age
-    age = Date.today.years_ago(self.birt.year).year
+    age = Date.today.month < self.birt.month ? (Date.today.years_ago(self.birt.year).year) -1 : Date.today.years_ago(self.birt.year).year
   end
 
   def pc_count
