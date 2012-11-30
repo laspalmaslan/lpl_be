@@ -1,7 +1,7 @@
 = simple_form_for @post, html:{class: "custom-form"} do |f|
   - if @post.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibieron que este post se guardara:"
       %ul
         - @post.errors.full_messages.each do |msg|
           %li= msg
@@ -10,4 +10,4 @@
   = f.input :intro, :as => :ckeditor, :input_html => { :toolbar => 'Full' }
   = f.input :content, :as => :ckeditor, :input_html => { :toolbar => 'Full' }
   .actions
-    = f.submit 'Save', class: "btn-blue"
+    = f.submit 'Guardar', class: "btn-blue"

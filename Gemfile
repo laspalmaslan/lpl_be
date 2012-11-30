@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'jquery-rails'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -17,10 +19,6 @@ group :assets do
   #javascript text editor
   gem "ckeditor", git: "git://github.com/galetahub/ckeditor.git"
 end
-
-gem 'jquery-rails'
-
-gem 'pg'
 
 group :test do
   gem "rspec-rails", :group => [:test, :development]

@@ -28,7 +28,7 @@
             %p
               _____
       %td
-        = link_to edit_manage_calendar_path(day.id), class: "btn btn-primary with-tooltip", title: "Editar Día" do
+        = link_to edit_manage_calendar_path(day.id), class: "btn btn-primary with-tooltip", title: "Editar día" do
           %i.icon-pencil
-        = link_to destroy_manage_calendar_path(day.id), class: "btn btn-danger with-tooltip", method: :delete, data: { confirm: '¿Estas seguro de eliminar este día?' }, title: "Eliminar Día" do
+        = link_to destroy_manage_calendar_path(day.id), class: "btn btn-danger with-tooltip", method: :delete, data: { confirm: '¿Estás seguro de eliminar este día?' }, title: "Eliminar día" do
           %i.icon-trash
