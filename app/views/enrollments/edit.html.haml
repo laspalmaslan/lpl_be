@@ -1,5 +1,5 @@
 %section.main.row
-  = simple_form_for(@enrollment, url: g_enrollment_update_path(@enrollment)) do |f|
+  = simple_form_for(@enrollment, url:  edit_enrollment_path(@enrollment)) do |f|
     = f.error_notification
 
     .form-inputs

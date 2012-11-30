@@ -13,7 +13,7 @@
       %td= enrollment.age
       %td
         .btn-group
-          = link_to (enrollment.etype.name == 'Lan') ? edit_enrollment_path(enrollment) : g_enrollment_edit_path(enrollment.id), class: "btn btn-primary with-tooltip" , :title => "Editar" do
+          = link_to (enrollment.etype.name == 'LAN') ? edit_enrollment_path(enrollment) : g_enrollment_edit_path(enrollment.id), class: "btn btn-primary with-tooltip" , :title => "Editar" do
             %i.icon-pencil
           = link_to enrollment, method: :delete, data: { confirm: '¿Estas seguro de eliminar este post?' }, class: "btn btn-danger with-tooltip" , :title => "Borrar" do
             %i.icon-trash

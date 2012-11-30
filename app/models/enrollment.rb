@@ -29,6 +29,10 @@ class Enrollment < ActiveRecord::Base
     end
   end
 
+  def dni
+    self.dni_n.to_s + self.dni_l
+  end
+
   def send_steps
     if Enrollment.where('paid_at IS NOT NULL').count > 400
       self.send_waiting
@@ -48,10 +52,9 @@ class Enrollment < ActiveRecord::Base
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
-
-
+  
   def age
-    age = Date.today.years_ago(self.birt.year).year
+    age = Date.today.month < self.birt.month ? (Date.today.years_ago(self.birt.year).year) -1 : Date.today.years_ago(self.birt.year).year
   end
 
   def pc_count
