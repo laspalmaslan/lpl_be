@@ -1,3 +1,4 @@
+# coding: UTF-8
 class ManageCalendarController < ApplicationController
   layout "admin"
   before_filter :authenticate_admin!
