@@ -2,6 +2,7 @@
 class ManageAdminsController < ApplicationController
   before_filter :authenticate_admin!
   layout "admin"
+
   def activations
     @admins_actived = Admin.where(approved: true)
     @admins_deactived = Admin.where(approved: false)
@@ -13,7 +14,7 @@ class ManageAdminsController < ApplicationController
       if @admin.activate
         format.html {redirect_to admins_list_path(), notice: "Admin activado"}
       else
-        format.html {redirect_to admins_list_path(), notice: "Perdón algo fue mal"}
+        format.html {redirect_to admins_list_path(), notice: "Lo siento, algo fue mal"}
       end
     end
   end
@@ -24,7 +25,7 @@ class ManageAdminsController < ApplicationController
       if @admin.deactivate
         format.html {redirect_to admins_list_path(), notice: "Admin desactivado"}
       else
-        format.html {redirect_to admins_list_path(), notice: "Perdón algo fue mal"}
+        format.html {redirect_to admins_list_path(), notice: "Lo siento, algo fue mal"}
       end
     end
   end

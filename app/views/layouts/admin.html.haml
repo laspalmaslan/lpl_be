@@ -57,6 +57,8 @@
                     =link_to "Nueva tipo LAN", new_enrollment_path
                   %li
                     =link_to "Nueva tipo consolas", g_enrollment_new_path
+                  %li
+                    =link_to "Confirmadas", show_enrollment_paid_path
               %li{class: "dropdown"}
                 %a.dropdown-toggle{data: {toggle: "dropdown"}}
                   = current_admin.email
@@ -65,7 +67,7 @@
                   %li
                     =link_to "Cambiar datos personales", edit_admin_registration_path
                   %li
-                    = link_to('Logout', destroy_admin_session_path, :method => :delete)
+                    = link_to('Salir', destroy_admin_session_path, :method => :delete)
     .container
       .row
         .span12

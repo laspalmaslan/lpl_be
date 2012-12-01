@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: 'Post creado con éxito.' }
       else
         format.html { render action: "new" }
       end
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Post actualizado con éxito.' }
       else
         format.html { render action: "edit" }
       end
@@ -68,9 +68,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     respond_to do |format|
       if @post.publish
-        format.html { redirect_to posts_path, notice: 'Post published.' }
+        format.html { redirect_to posts_path, notice: 'Post publicado.' }
       else
-        format.html { redirect_to posts_path, notice: 'Sorry, Error.' }
+        format.html { redirect_to posts_path, notice: 'Lo siento, Error.' }
       end
     end
   end
@@ -79,9 +79,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     respond_to do |format|
       if @post.unpublish
-        format.html { redirect_to posts_path, notice: 'Post unpublished.' }
+        format.html { redirect_to posts_path, notice: 'Post no publicado.' }
       else
-        format.html { redirect_to posts_path, notice: 'Sorry, Error.' }
+        format.html { redirect_to posts_path, notice: 'Lo siento, Error.' }
       end
     end
   end
