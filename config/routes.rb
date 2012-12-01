@@ -41,6 +41,7 @@ Lpl::Application.routes.draw do
     match "manage_admins" => 'manage_admins#activations', as: :admins_list
     match "manage_admins/activate/:id" => 'manage_admins#activate', as: :activate_admin
     match "manage_admins/deactivate/:id" => 'manage_admins#deactivate', as: :deactivate_admin
+
     # enrollments
     resources :enrollments
     match 'enrollment_paid/:id' => 'enrollments#paid', as: :enrollment_paid
@@ -50,7 +51,6 @@ Lpl::Application.routes.draw do
     match "game_enrollments/:id/edit" => "game_enrollments#edit", as: :g_enrollment_edit
     match "game_enrollments/:id/upate" => "game_enrollments#update", as: :g_enrollment_update, via: :put
     match "game_enrollments/create" => "game_enrollments#create", as: :g_enrollment_create, via: :post
-
   end
   root to: "blog#index"
 end

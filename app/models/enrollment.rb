@@ -11,9 +11,11 @@ class Enrollment < ActiveRecord::Base
   validate :pc_count
   validate :video_game_count
   validates :dni_n, :length => { :in => 7..8 },
-                    :numericality => { :only_integer => true }
+                    :numericality => { :only_integer => true },
+                    :uniqueness  => true
+
   validates :dni_l, :length => { :maximum => 1 },
-                    :uniqueness => { :case_sensitive => false }
+                    :presence => { :case_sensitive => false }
   validate :dni_valid?
 
   accepts_nested_attributes_for :clan
@@ -25,6 +27,10 @@ class Enrollment < ActiveRecord::Base
     if self.dni_l != dni.upcase
       errors.add(:dni_n, "DNI no valido")
     end
+  end
+
+  def dni
+    self.dni_n.to_s + self.dni_l
   end
 
   def send_steps
@@ -46,17 +52,9 @@ class Enrollment < ActiveRecord::Base
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
-
+  
   def age
-    age = Date.today.years_ago(self.birt.year).year
-    if self.birt.day < Date.today.day and self.birt.month < Date.today.month
-      age -= 1
-    end
-    age
-  end
-
-  def dni
-    self.dni_n.to_s + self.dni_l
+    age = Date.today.month < self.birt.month ? (Date.today.years_ago(self.birt.year).year) -1 : Date.today.years_ago(self.birt.year).year
   end
 
   def pc_count
