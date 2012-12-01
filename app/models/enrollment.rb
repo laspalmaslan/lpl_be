@@ -13,9 +13,9 @@ class Enrollment < ActiveRecord::Base
   accepts_nested_attributes_for :clan
   after_create :send_steps
   validates :dni_n, :length => { :in => 7..8 }, 
-                    :numericality => { :only_integer => true }
+                    :numericality => { :only_integer => true },
                     :uniqueness  => true
-  validates :dni_l, :length => { :maximum => 1 }
+  validates :dni_l, :length => { :maximum => 1 },
                     :presence => { :case_sensitive => false }
   validate :dni_valid?
   before_save :uppercase
