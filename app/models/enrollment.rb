@@ -29,9 +29,11 @@ class Enrollment < ActiveRecord::Base
   scope :by_date, where('paid_at is not NULL')
 
   def dni_valid?
-    dni = "TRWAGMYFPDXBNJZSQVHLCKE"[self.dni_n % 23].chr
-    if self.dni_l.upcase != dni.upcase
-      errors.add(:dni_n, "DNI no valido")
+    if self.dni_n.present?
+      dni = "TRWAGMYFPDXBNJZSQVHLCKE"[self.dni_n % 23].chr
+      if self.dni_l.upcase != dni.upcase
+        errors.add(:dni_n, "DNI no valido")
+      end
     end
   end
 
@@ -60,7 +62,7 @@ class Enrollment < ActiveRecord::Base
   end
   
   def age
-    age = Date.today.month < self.birt.month ? (Date.today.years_ago(self.birt.year).year) -1 : Date.today.years_ago(self.birt.year).year
+    return Date.today.month < self.birt.month ? (Date.today.years_ago(self.birt.year).year) -1 : Date.today.years_ago(self.birt.year).year
   end
 
   def pc_count

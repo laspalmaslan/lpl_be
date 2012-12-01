@@ -54,20 +54,17 @@
                   %li
                     =link_to "Sin confirmar", enrollments_path
                   %li
+                    =link_to "Confirmadas", show_enrollment_paid_path
+                  %li
                     =link_to "Nueva tipo LAN", new_enrollment_path
                   %li
                     =link_to "Nueva tipo consolas", g_enrollment_new_path
-                  %li
-                    =link_to "Confirmadas", show_enrollment_paid_path
-              %li{class: "dropdown"}
-                %a.dropdown-toggle{data: {toggle: "dropdown"}}
-                  = current_admin.email
-                  %b.caret
-                %ul.dropdown-menu
-                  %li
-                    =link_to "Cambiar datos personales", edit_admin_registration_path
-                  %li
-                    = link_to('Salir', destroy_admin_session_path, :method => :delete)
+              %li.alone
+                =link_to edit_admin_registration_path do
+                  %i.icon-cogs
+              %li.alone
+                = link_to(destroy_admin_session_path, :method => :delete) do
+                  %i.icon-off
     .container
       .row
         .span12
