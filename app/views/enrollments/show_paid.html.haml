@@ -4,6 +4,7 @@
 
 %table.table.table-bordered.table-striped.table-hover
   %tr
+    %th.image imagen
     %th Nombre
     %th DNI
     %th Edad
@@ -15,6 +16,8 @@
 
   - @enrollments.each do |enrollment|
     %tr
+      %td.image
+        %img{src: "/assets/acre.png"}
       %td= enrollment.full_name
       %td= enrollment.dni
       %td= enrollment.age
