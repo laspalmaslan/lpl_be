@@ -1,5 +1,5 @@
 header, a.print-preview, table tr:first-child, tr td:last-child,
-tr td:nth-child(7n), tr td:nth-child(8n) {
+tr td:nth-child(7n), tr td:nth-child(5n), tr td:nth-child(8n) {
   display:none;
 }
 
@@ -21,7 +21,7 @@ tr {
     }
     &:nth-child(2n) {
     margin-left: 116px;
-      top: 78px;
+      top: 88px;
       &:before {
         content: "Nombre: ";
         font-weight: bold;
@@ -29,7 +29,7 @@ tr {
     }
     &:nth-child(3n) {
     margin-left: 116px;
-      top: 104px;
+      top: 114px;
       &:before {
         content: "DNI: ";
         font-weight: bold;
@@ -37,23 +37,15 @@ tr {
     }
     &:nth-child(4n) {
     margin-left: 228px;
-      top: 104px;
+      top: 114px;
       &:before {
         content: "Edad: ";
         font-weight: bold;
       }
     }
-    &:nth-child(5n){
-    margin-left: 116px;
-      top: 128px;
-      &:before {
-        content: "Email: ";
-        font-weight: bold;
-      }
-    }
     &:nth-child(6n){
     margin-left: 116px;
-      top: 152px;
+      top: 138px;
       &:before {
         content: "Inscripción: ";
         font-weight: bold;
