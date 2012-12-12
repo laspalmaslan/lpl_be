@@ -15,12 +15,13 @@ tr {
     display: list-item;
     width: 193px;
     position: absolute;
+    line-height: 12px;
     &:first-child img {
       float:left;
     }
     &:nth-child(2n) {
     margin-left: 116px;
-      top: 76px;
+      top: 78px;
       &:before {
         content: "Nombre: ";
         font-weight: bold;
@@ -28,7 +29,7 @@ tr {
     }
     &:nth-child(3n) {
     margin-left: 116px;
-      top: 100px;
+      top: 104px;
       &:before {
         content: "DNI: ";
         font-weight: bold;
@@ -36,7 +37,7 @@ tr {
     }
     &:nth-child(4n) {
     margin-left: 228px;
-      top: 100px;
+      top: 104px;
       &:before {
         content: "Edad: ";
         font-weight: bold;
@@ -44,7 +45,7 @@ tr {
     }
     &:nth-child(5n){
     margin-left: 116px;
-      top: 124px;
+      top: 128px;
       &:before {
         content: "Email: ";
         font-weight: bold;
@@ -52,7 +53,7 @@ tr {
     }
     &:nth-child(6n){
     margin-left: 116px;
-      top: 148px;
+      top: 152px;
       &:before {
         content: "Inscripción: ";
         font-weight: bold;
