@@ -44,3 +44,4 @@ $ ->
 
   $('.fake-social').click ->
     alert('No puedes compartir un articulo no publicado')
+  $('a.print-preview').printPreview()

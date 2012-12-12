@@ -1,0 +1,50 @@
+header, a.print-preview, table tr:first-child, tr td:last-child,
+tr td:nth-child(6n), tr td:nth-child(7n) {
+  display:none;
+}
+
+tr { 
+  width: 324px;
+  height: 211px;
+  background-image: url(acre.png);
+  display: inline-block;
+  list-style: none;
+  margin: 5px;
+  font-size: 14px;
+  td {
+    display: list-item;
+    margin-left: 116px;
+    &:first-child {
+      margin-top: 76px;
+      &:before {
+        content: "Nombre: ";
+        font-weight: bold;
+      }
+    }
+    &:nth-child(2n) {
+      &:before {
+        content: "DNI: ";
+        font-weight: bold;
+      }
+    }
+    &:nth-child(3n) {
+      &:before {
+        content: "Edad: ";
+        font-weight: bold;
+      }
+    }
+    &:nth-child(4n){
+      &:before {
+        content: "Email: ";
+        font-weight: bold;
+      }
+    }
+    &:nth-child(5n){
+      &:before {
+        content: "Inscripción: ";
+        font-weight: bold;
+
+      }
+    }
+  }
+}

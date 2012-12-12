@@ -1,6 +1,11 @@
+%a.btn.print-preview{href: "#"}
+  %i.icon-print
+  Imprimir
+
 %table.table.table-bordered.table-striped.table-hover
   %tr
     %th Nombre
+    %th DNI
     %th Edad
     %th Email
     %th Tipo
@@ -11,10 +16,11 @@
   - @enrollments.each do |enrollment|
     %tr
       %td= enrollment.full_name
+      %td= enrollment.dni
       %td= enrollment.age
       %td= enrollment.email
       %td= enrollment.etype.name
-      %td= enrollment.clan_id
+      %td= enrollment.clan.name
       %td= enrollment.paid_at
       %td
         .btn-group

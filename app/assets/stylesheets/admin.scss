@@ -1,3 +1,15 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require print-preview
+ */
 @import "bourbon";
 @import "bootstrap";
 @import "font-awesome";
@@ -92,4 +104,11 @@ form input[type='number']::-webkit-outer-spin-button,
 form input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+// pint links
+#print-modal-controls a.print {
+  background: url(icon-print.png) no-repeat 50% 50%;
+}
+#print-modal-controls a.close {
+  background: url(icon-close.png) no-repeat 50% 50%;
 }
