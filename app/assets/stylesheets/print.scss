@@ -4,48 +4,58 @@ tr td:nth-child(7n), tr td:nth-child(5n), tr td:nth-child(8n) {
 }
 
 tr { 
-  width: 324px;
-  height: 211px;
-  display: inline-block;
+  width: 10cm;
+  height: 6.4cm;
+  display: table-cell;
   list-style: none;
   margin: 5px;
   font-size: 14px;
   position: relative;
+  font-family: trebuchet ms,helvetica,sans-serif;
+  &:nth-child(2n) {
+    margin-left: 180px;
+  }
   td {
     display: list-item;
-    width: 193px;
+    width: 203px;
     position: absolute;
-    line-height: 12px;
-    &:first-child img {
+    line-height: 14px;
+    &:first-child{
+      width: 100%;
+      height: 100%;
+      top: 0;
+      img {
       float:left;
+      width: 100%;
     }
+  }
     &:nth-child(2n) {
-    margin-left: 116px;
-      top: 88px;
+    margin-left: 145px;
+      top: 102px;
       &:before {
         content: "Nombre: ";
         font-weight: bold;
       }
     }
     &:nth-child(3n) {
-    margin-left: 116px;
-      top: 114px;
+    margin-left: 150px;
+      top: 136px;
       &:before {
         content: "DNI: ";
         font-weight: bold;
       }
     }
     &:nth-child(4n) {
-    margin-left: 228px;
-      top: 114px;
+    margin-left: 270px;
+      top: 136px;
       &:before {
         content: "Edad: ";
         font-weight: bold;
       }
     }
     &:nth-child(6n){
-    margin-left: 116px;
-      top: 138px;
+    margin-left: 150px;
+      top: 172px;
       &:before {
         content: "Inscripción: ";
         font-weight: bold;
