@@ -4,7 +4,6 @@
 
 %table.table.table-bordered.table-striped.table-hover
   %tr
-    %th.image imagen
     %th Nombre
     %th DNI
     %th Edad
@@ -16,8 +15,6 @@
 
   - @enrollments.each do |enrollment|
     %tr
-      %td.image
-        %img{src: "/assets/acre.png"}
       %td= enrollment.full_name
       %td= enrollment.dni
       %td= enrollment.age
@@ -29,3 +26,22 @@
         .btn-group
           = link_to enrollment_unpaid_path(enrollment.id), method: :delete, data: { confirm: '¿Estás seguro de querer cancelar este pago?' }, class: "btn btn-danger with-tooltip" , :title => "Cancelar pago" do
             %i.success - €
+
+%ul.print
+  - @enrollments.each do |enrollment|
+    %li.enroll
+      %ul
+        %li.image
+          %img{src: "/assets/acre.png"}
+        %li.name
+          %strong Nombre:
+          = enrollment.full_name
+        %li.dni
+          %strong DNI:
+          = enrollment.dni
+        %li.age
+          %strong Edad:
+          = enrollment.age
+        %li.type
+          %strong Inscripción:
+          = enrollment.etype.name

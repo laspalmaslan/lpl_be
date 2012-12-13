@@ -1,65 +1,55 @@
-header, a.print-preview, table tr:first-child, tr td:last-child,
-tr td:nth-child(7n), tr td:nth-child(5n), tr td:nth-child(8n) {
+header, a.print-preview, table {
   display:none;
 }
-
-tr { 
-  width: 10cm;
-  height: 6.4cm;
-  display: table-cell;
-  list-style: none;
-  margin: 5px;
-  font-size: 14px;
-  position: relative;
-  font-family: trebuchet ms,helvetica,sans-serif;
-  &:nth-child(2n) {
-    margin-left: 180px;
-  }
-  td {
-    display: list-item;
-    width: 203px;
-    position: absolute;
-    line-height: 14px;
-    &:first-child{
-      width: 100%;
-      height: 100%;
-      top: 0;
-      img {
-      float:left;
-      width: 100%;
-    }
-  }
+.print {
+  list-style:none;
+  padding: 0;
+  .enroll {
+    width: 9.5cm;
+    height: 6.4cm;
+    float:left;
+    margin: 5px 5px 5px 0px;
     &:nth-child(2n) {
-    margin-left: 145px;
-      top: 102px;
-      &:before {
-        content: "Nombre: ";
-        font-weight: bold;
-      }
+      float:right;
     }
-    &:nth-child(3n) {
-    margin-left: 150px;
-      top: 136px;
-      &:before {
-        content: "DNI: ";
-        font-weight: bold;
+    ul {
+      list-style: none;
+      margin: 5px;
+      padding: 0;
+      position: relative;
+      .image {
+        position: absolute;
+        top: 0;
+        img {
+          width: 9.5cm;
+          height: 6.4cm;
+          float: left;
+        }
       }
-    }
-    &:nth-child(4n) {
-    margin-left: 270px;
-      top: 136px;
-      &:before {
-        content: "Edad: ";
-        font-weight: bold;
+      .name {
+        position: absolute;
+        top: 100px;
+        left: 144px;
+        width: 188px;
       }
-    }
-    &:nth-child(6n){
-    margin-left: 150px;
-      top: 172px;
-      &:before {
-        content: "Inscripción: ";
-        font-weight: bold;
+      .dni{
+        position: absolute;
+        top: 138px;
+        left: 150px;
+
+      }
+      .age{
+        position: absolute;
+        top: 160px;
+        left: 166px;
+
+      }
+      .type{
+        position: absolute;
+        top: 186px;
+        left: 168px;
       }
     }
   }
 }
+
