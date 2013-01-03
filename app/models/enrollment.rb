@@ -12,7 +12,7 @@ class Enrollment < ActiveRecord::Base
   validate :video_game_count
   accepts_nested_attributes_for :clan
   after_create :send_steps
-  validates :dni_n, :length => { :in => 7..8 }, 
+  validates :dni_n, :length => { :in => 7..8 },
                     :numericality => { :only_integer => true },
                     :uniqueness  => true
   validates :dni_l, :length => { :maximum => 1 },
@@ -60,9 +60,9 @@ class Enrollment < ActiveRecord::Base
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
-  
+
   def age
-    return Date.today.month < self.birt.month ? (Date.today.years_ago(self.birt.year).year) -1 : Date.today.years_ago(self.birt.year).year
+    ( (Date.today - self.birt).to_i.days / 1.year ).to_i
   end
 
   def pc_count
