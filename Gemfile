@@ -10,20 +10,20 @@ gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'compass-rails'
+  gem 'susy'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass', '~> 2.1.0.0'
   gem 'font-awesome-sass-rails'
-  gem 'bootswatch-rails'
   gem 'uglifier', '>= 1.0.3'
   #javascript text editor
   gem "ckeditor", git: "git://github.com/galetahub/ckeditor.git"
 end
 
+gem "rspec-rails", :group => [:test, :development]
 group :test do
-  gem "rspec-rails", :group => [:test, :development]
   gem 'faker'
-  #html parser for all actions on pages.
   gem 'capybara-firebug'
   gem "factory_girl_rails"
   gem "capybara"
@@ -44,7 +44,6 @@ gem "paperclip"
 gem 'aws-sdk', '~> 1.3.4'
 #nested attributes
 gem "nested_form"
-  gem 'bourbon'
 
 group :development, :test do
   # To use debugger
@@ -52,18 +51,3 @@ group :development, :test do
   gem "debugger"
 end
 
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To solve rake db:create problem
-gem 'therubyracer', require: "v8"
-
-# Server unicorn
-gem 'unicorn'
