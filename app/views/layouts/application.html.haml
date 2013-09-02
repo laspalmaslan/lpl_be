@@ -14,56 +14,16 @@
         %ul.nav.pull-left
           %li
             .link
-              =link_to root_path, class: (@current_controller == 'blog' ? "active with-tooltip" : "with-tooltip"), id: "Noticias", data: {placement: "bottom"}, rel: "tooltip", title: "Noticias" do
-                %i.icon-align-justify
+              =link_to "Home", root_path, class: ((@current_controller == 'static_pages' and @current_action == 'dashboard') ? "active" : "")
           %li
             .link
-              =link_to calendar_path, class: (@current_controller == 'calendar' ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Programa" do
-                %i.icon-calendar
-              
+              =link_to "Noticias", blog_path, class: (@current_controller == 'blog' ? "active" : "")
           %li
             .link
-              =link_to competitions_path, class: (@current_controller == 'competitions' ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Competiciones" do
-                %i.icon-trophy
+              =link_to "Calendario", calendar_path, class: (@current_controller == 'calendar' ? "active" : "")
           %li
             .link
-              =link_to rules_path, class: ((@current_controller == 'static_pages' and @current_action == 'rules') ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Normativa" do
-                %i.icon-legal
-          %li
-            .link
-              =link_to u_enrollment_path, class: ((@current_controller == 'users_enrollments') ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Inscripciones" do
-                %i.icon-edit
-              
-        %ul.slide-control.pull-right
-          %li
-            %div.active 
-          %li
-            %div 
-          %li
-            %div 
-          %li
-            %div
-
-        .slide.active
-          %span.slide-title
-            Talleres
-          %span.slide-content
-            Ruby on rails, Máquinas virtuales, Cheff, Modelado 3d ...
-        .slide
-          %span.slide-title
-            Actividades
-          %span.slide-content
-            Ciencia ficción, Paintball, Deportes extremos ...
-        .slide
-          %span.slide-title
-            Videojuegos
-          %span.slide-content
-            StarCraft2, Modern Warfare 3, FIFA2012, League of Legends ...
-        .slide
-          %span.slide-title
-            LAN Party
-          %span.slide-content
-            Streaming, Modding, Torneos, Consolas ...
+              =link_to "Torneos", competitions_path, class: (@current_controller == 'competitions' ? "active" : "")
 
       -if flash[:notice].present?
         .alert.alert-success
