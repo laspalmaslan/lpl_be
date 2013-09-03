@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require ckeditor/init
 //= require jquery.print-preview
+//= require kkcountdown.min
 //= require general

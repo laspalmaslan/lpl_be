@@ -2,28 +2,36 @@
 %html
   %head
     %title Las Palmas LAN 2012
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "general", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     <meta name="google-site-verification" content="_rU5LQyvI3emLQxMTxIqjf3zs998kmHDp-IAfduun3U" />
   %body
     .container
-      %header
-        #banner
-          #logo.well
-        %ul.nav.pull-left
-          %li
-            .link
+      %header#header
+        %h1#logo
+          =link_to "Lpl Gran Canaria", root_path
+        %nav
+          #countdown
+            Cuenta atrás
+            %span#time{ data: { time: "1382529600" } }
+          %ul#navigation
+            %li
+              %i.icons-star
               =link_to "Home", root_path, class: ((@current_controller == 'static_pages' and @current_action == 'dashboard') ? "active" : "")
-          %li
-            .link
+                
+            %li
+              %i.icons-star
               =link_to "Noticias", blog_path, class: (@current_controller == 'blog' ? "active" : "")
-          %li
-            .link
+                
+            %li
+              %i.icons-star
               =link_to "Calendario", calendar_path, class: (@current_controller == 'calendar' ? "active" : "")
-          %li
-            .link
+                
+            %li
+              %i.icons-star
               =link_to "Torneos", competitions_path, class: (@current_controller == 'competitions' ? "active" : "")
+              
 
       -if flash[:notice].present?
         .alert.alert-success

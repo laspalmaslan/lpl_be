@@ -1,0 +1,68 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: $bodyBgColor;
+  color: $bodyFontColor;
+  padding-bottom: 58px;
+}
+
+#header {
+  @include container;
+  padding-top: 35px;
+  padding-bottom: 80px;
+  background-image:url('header-bg.png');
+  #logo {
+    @include span-columns(4,12);
+    a { 
+      @include icon(logo);
+      color: $transparent;
+    }
+  }
+  nav {
+      @include span-columns(8 omega,12);
+    #countdown {
+      text-align: right;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+      @extend %fontRegular;
+      #time {
+        .kkcountdown-box {
+          span {
+            background-color: $countdownBgColor;
+            color: $countdownColor;
+            padding: 3px 2px 3px 0;
+            &:nth-child(2n+1) {
+              margin-left: 6px;
+              padding: 3px 0 3px 2px;
+            }
+          }
+        }
+      }
+    }
+    #navigation {
+      @include inline-block-list;
+      li {
+        margin-left: 25px;
+        text-align: center;
+      }
+      a {
+        font-size: 25px;
+        text-transform: uppercase;
+        color: $navLinksColor;
+        text-decoration: none;
+        @extend %fontLight;
+        display: block;
+      }
+      .icons-star {
+        @include icon(star);
+        margin-bottom: 28px;
+      }
+    }
+  }
+}
+#main-section {
+}
+#footer {
+}

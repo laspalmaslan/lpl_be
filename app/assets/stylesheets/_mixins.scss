@@ -1,0 +1,7 @@
+//icon mixin
+@mixin icon($name,$width: icons-sprite-width($name),$height: icons-sprite-height($name)) {
+  width: $width;
+  height: $height;
+  @include icons-sprite($name);
+  @include inline-block; 
+}

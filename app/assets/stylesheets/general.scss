@@ -1,5 +1,12 @@
 @import "variables";
+@import "compass/reset";
+@import "compass/typography/lists/inline-block-list";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import "susy";
-@import "font-awesome";
-@import url(http://fonts.googleapis.com/css?family=Passion+One);
-
+@import "grid";
+@import "icons/*.png";
+@include all-icons-sprites;
+@import "mixins";
+@import "colors";
+@import "base";
+@import "screen";

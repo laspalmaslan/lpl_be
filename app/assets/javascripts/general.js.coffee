@@ -21,3 +21,12 @@ $ ->
   $('.pc_games :input').change ->
     checkboxValidation()
   checkboxValidation()
+
+  $('#countdown #time').kkcountdown
+    dayText : 'D'
+    daysText : 'D'
+    hoursText : 'H'
+    minutesText : 'M'
+    secondsText : 'S'
+    displayZeroDays : false
+
