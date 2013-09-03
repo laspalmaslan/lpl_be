@@ -31,12 +31,8 @@
             %li
               %i.icons-star
               =link_to "Torneos", competitions_path, class: (@current_controller == 'competitions' ? "active" : "")
-              
 
-      -if flash[:notice].present?
-        .alert.alert-success
-          = flash[:notice]
-      -if flash[:error].present?
-        .alert.alert-error
-          = flash[:error] 
+      #tickets
+        #ticket-caption Entradas para <strong>Las Palmas Lan</strong> ya a la venta
+        %h2#ticket-title Compra tu entrada
       = yield

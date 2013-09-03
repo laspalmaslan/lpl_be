@@ -62,6 +62,35 @@ body {
     }
   }
 }
+#tickets {
+  @include container;
+  @include icons-sprite(banner);
+  height: 250px;
+  #ticket-caption {
+    @include span-columns(6,12);
+    @include post(6);
+    line-height: 60px;
+    text-align: center;
+    @include inline-block(top);
+    padding: 5px;
+    background-color: $captionBg;
+    color: $captionColor;
+    font-size: 18px;
+    @extend %fontLight;
+    text-transform: uppercase;
+    strong {
+      @extend %fontBold;
+    }
+  }
+  #ticket-title {
+    margin-top: 30px;
+    @include span-columns(5,12);
+    font-size: 50px;
+    @extend %fontRegular;
+    color: $ticketTitle;
+    text-transform: uppercase;
+  }
+}
 #main-section {
 }
 #footer {
