@@ -12,11 +12,11 @@ gem 'pg'
 group :assets do
   gem 'compass-rails'
   gem 'susy'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass', '~> 2.1.0.0'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'bootstrap-sass'
   gem 'font-awesome-sass-rails'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
   #javascript text editor
   gem "ckeditor", git: "git://github.com/galetahub/ckeditor.git"
 end
@@ -41,7 +41,7 @@ gem "simple_form"
 #upload files
 gem "paperclip"
 #heroku s3
-gem 'aws-sdk', '~> 1.3.4'
+gem 'aws-sdk'
 #nested attributes
 gem "nested_form"
 
