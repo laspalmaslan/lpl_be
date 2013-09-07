@@ -15,18 +15,70 @@
   color: $witeSectionColor;
   background-color: $witeSectionBg;
   %sectionHeader {
-    padding: 5px;
     a {
+      display: block;
       color: $witeSectionColor;
       text-decoration: none;
+      padding: 5px;
+      height: 40px;
+      span {
+        margin-top: 5px;
+        @include inline-block;
+        &:last-child {
+          float: right;
+          font-size: 14px;
+          margin: 13px 18px 0 0;
+          span { margin: 0 4px 4px 0; }
+        }
+      }
+    }
+  }
+  %sectionQuestion {
+    a {
+      line-height: 36px;
+      text-align: center;
+      display: block;
+      color: $witeSectionColor;
+      text-decoration: none;
+      padding: 5px;
+      height: 40px;
+      font-size: 18px;
+      @extend %fontBold;
     }
   }
   %sectionListV {
+    @include span-columns(6, 6);
+    @include nth-omega(1n);
     li {
+      @include span-columns(6, 6);
+      @include nth-omega(1n);
+      @include inline-block;
+      border-top: 1px solid $sectionListVBorderColor;
       a {
-        .info {
+        @include inline-block;
+        @include span-columns(6, 6);
+        @include nth-omega(1n);
+        height: 100px;
+        color:  $witeSectionColor;
+        %info {
           @include inline-block;
           @include span-columns(5, 6);
+          height: 60px;
+          margin-top: 20px;
+          text-indent: 10px;
+          font-size: 14px;
+          line-height: 18px;
+          div:first-child {
+            color: $fistDivColor;
+            margin-bottom: 4px;
+          }
+        }
+        i {
+          @include span-columns(1, 6);
+          @include nth-omega(1n);
+          @include inline-block;
+          margin-top: 44px;
+          text-decoration: none;
         }
       }
     }
@@ -34,6 +86,7 @@
   %sectionListH {
     @include inline-block-list;
     @include span-columns(6, 6);
+    padding: 30px 0 42px 0;
     li {
       @include span-columns(2, 6);
       @include nth-omega(3n);
@@ -43,12 +96,19 @@
         display: block;
         text-decoration: none;
         color: $witeSectionColor;
+        @include transition-property(opacity);
+        @include transition-duration(0.5s);
+        &:hover { opacity: 0.5; }
         img {
           height: 100px;
           width: 100px;
           @include border-radius(60px);
         }
-        .title {
+        div {
+          margin-top: 10px;
+          text-align: center;
+          @extend %fontRegular;
+          font-size: 18px;
         }
       }
     }
