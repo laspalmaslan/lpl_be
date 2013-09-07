@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 3.2.13'
 gem 'jquery-rails'
-gem 'pg'
+#gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,7 +28,7 @@ group :test do
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
-  gem "database_cleaner"
+  gem 'database_cleaner', '< 1.1.0'
   gem "selenium-webdriver"
 end
 
