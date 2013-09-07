@@ -1,0 +1,37 @@
+#news {
+  @extend %whiteSection;
+  #news-title {
+    @extend %sectionHeader;
+    a {}
+  }
+  #news {
+    @extend %sectionListV;
+    a {}
+  }
+}
+#tournaments {
+  @extend %whiteSection;
+  #tournaments-title {
+    @extend %sectionHeader;
+    a {}
+  }
+  #tournament {
+    @extend %sectionListH;
+    a {
+      .tournament-info {}
+      .tournament-title {}
+    }
+  }
+}
+#where {
+  #where-title {}
+}
+#contact {
+  #contact-title {}
+}
+#facebook {
+  #facebook-title {}
+}
+#twitter {
+  #twitter-title {}
+}

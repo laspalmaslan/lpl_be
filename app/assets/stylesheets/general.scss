@@ -6,7 +6,9 @@
 @import "grid";
 @import "icons/*.png";
 @include all-icons-sprites;
+@import 'font-awesome';
 @import "mixins";
 @import "colors";
 @import "base";
 @import "screen";
+@import "dashboard";

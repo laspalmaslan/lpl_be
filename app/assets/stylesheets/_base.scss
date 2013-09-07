@@ -7,3 +7,47 @@
 %fontBold {
   font-weight: 700;
 }
+
+%whiteSection {
+  @include span-columns(6, 12);
+  @include nth-omega(2n);
+  margin-top: $gutter-width;
+  color: $witeSectionColor;
+  background-color: $witeSectionBg;
+  %sectionHeader {
+    padding: 5px;
+    a {
+      color: $witeSectionColor;
+      text-decoration: none;
+    }
+  }
+  %sectionListV {
+    li {
+      a {
+        .info {
+          @include inline-block;
+          @include span-columns(5, 6);
+        }
+      }
+    }
+  }
+  %sectionListH {
+    @include inline-block-list;
+    @include span-columns(6, 6);
+    li {
+      @include span-columns(2, 6);
+      @include nth-omega(3n);
+      text-align: center;
+      @extend %fontBold;
+      a {
+        display: block;
+        text-decoration: none;
+        color: $witeSectionColor;
+        .image {
+        }
+        .title {
+        }
+      }
+    }
+  }
+}

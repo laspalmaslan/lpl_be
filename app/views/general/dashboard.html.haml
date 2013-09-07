@@ -1,1 +1,30 @@
-dashboard view
+%section#news
+  %h2#news-title 
+    = link_to blog_path do
+      %i.icon-bullhorn
+      Noticias
+  %ul#news
+    -@news.each do |notice|
+      %li.notice
+      = link_to article_path(notice.id) do
+        .notice-date= notice.published_at
+        .notice-title= notice.title
+%section#tournaments
+  %h2#tournaments-title
+    = link_to competitions_path do
+      %i.icon-trophy
+      Torneos
+  %ul#tournament
+    -@tournaments.each do |tournament|
+      %li.tournament
+        = link_to article_path(tournament.id) do
+          .tournament-image
+          .tournament-title= tournament.game
+%section#where
+  %h2#where-title ¿Dóde se celebra la Lpl 2012?
+%section#contact
+  %h2#contact-title ¿Quieres patrocinar el evento? Contactanos
+%section#facebook
+  %h2#facebook-title /LasPalmasLan
+%section#twitter
+  %h2#twitter-title #LplGranCanaria

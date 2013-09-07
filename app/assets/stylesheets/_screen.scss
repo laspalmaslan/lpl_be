@@ -1,3 +1,8 @@
+h2 {
+  @extend %fontRegular;
+  font-size: 25px;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-style: normal;
@@ -5,7 +10,6 @@ body {
   font-size: 18px;
   background-color: $bodyBgColor;
   color: $bodyFontColor;
-  padding-bottom: 58px;
 }
 
 #header {
@@ -64,12 +68,12 @@ body {
 }
 #tickets {
   @include container;
+  display: block;
   @include icons-sprite(banner);
   height: 250px;
   #ticket-caption {
     @include span-columns(6,12);
     @include post(6);
-    line-height: 60px;
     text-align: center;
     @include inline-block(top);
     padding: 5px;
@@ -83,6 +87,7 @@ body {
     }
   }
   #ticket-title {
+    line-height: 60px;
     margin-top: 30px;
     @include span-columns(5,12);
     font-size: 50px;
@@ -92,6 +97,10 @@ body {
   }
 }
 #main-section {
+  @include container;
+  background-image:url(background.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
 }
 #footer {
 }
