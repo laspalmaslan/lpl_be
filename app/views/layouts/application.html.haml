@@ -29,10 +29,6 @@
             .link
               =link_to rules_path, class: ((@current_controller == 'static_pages' and @current_action == 'rules') ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Normativa" do
                 %i.icon-legal
-          %li
-            .link
-              =link_to u_enrollment_path, class: ((@current_controller == 'users_enrollments') ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Inscripciones" do
-                %i.icon-edit
               
         %ul.slide-control.pull-right
           %li
