@@ -267,7 +267,7 @@ DEPENDENCIES
   nested_form
   paperclip
   pg
-  rails (= 3.2.13)
+  rails
   rspec-rails
   sass-rails
   selenium-webdriver
