@@ -43,7 +43,10 @@
         display: block;
         text-decoration: none;
         color: $witeSectionColor;
-        .image {
+        img {
+          height: 100px;
+          width: 100px;
+          @include border-radius(60px);
         }
         .title {
         }

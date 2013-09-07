@@ -17,10 +17,6 @@
   }
   #tournament {
     @extend %sectionListH;
-    a {
-      .tournament-info {}
-      .tournament-title {}
-    }
   }
 }
 #where {

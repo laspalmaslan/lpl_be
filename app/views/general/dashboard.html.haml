@@ -18,7 +18,7 @@
     -@tournaments.each do |tournament|
       %li.tournament
         = link_to article_path(tournament.id) do
-          .tournament-image
+          = image_tag tournament.image.url
           .tournament-title= tournament.game
 %section#where
   %h2#where-title ¿Dóde se celebra la Lpl 2012?
