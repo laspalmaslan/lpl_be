@@ -3,7 +3,7 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 if ENV["RAILS_ENV"] != "production"
   require 'rspec/core/rake_task'
-  task :default => %w(ci:copy_yml db:create:all db:migrate db:test:prepare spec)
+  task :default => %w(db:create:all db:migrate db:test:prepare spec)
 end
 
 
