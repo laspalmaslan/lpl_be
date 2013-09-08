@@ -18,7 +18,9 @@ gem 'capybara'
 gem 'poltergeist'
 gem "factory_girl_rails"
 gem 'database_cleaner', '~> 1.0.1'
-gem 'debugger'
+group :debug do
+    gem 'debugger'
+end
 gem "ckeditor"
 gem 'simple_form'
 gem 'devise'
