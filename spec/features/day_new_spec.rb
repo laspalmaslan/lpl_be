@@ -4,7 +4,7 @@ require 'spec_helper'
 describe "check thecreation" do
   before "create the day and event fields" do
     @admin = FactoryGirl.create :admin
-    log_in(@admin)
+    login(@admin)
     visit new_manage_calendar_path
     select '2012', :from => 'day_day_date_1i'
     select 'November', :from => 'day_day_date_2i'
