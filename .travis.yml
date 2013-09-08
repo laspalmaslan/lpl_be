@@ -3,4 +3,5 @@ rvm:
   - 2.0.0
 bundler_args: --without development debug
 before_script:
-  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database lpl_test;' -U postgres
+  - mv config/database.yml.travis  config/database.yml
