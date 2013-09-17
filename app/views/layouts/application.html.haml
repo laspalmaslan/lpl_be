@@ -8,25 +8,28 @@
     <meta name="google-site-verification" content="_rU5LQyvI3emLQxMTxIqjf3zs998kmHDp-IAfduun3U" />
   %body
     %header#header
-      %h1#logo
-        =link_to "Lpl Gran Canaria", root_path
-      %nav
-        #countdown
-          Cuenta atrás
-          %span#time{ data: { time: "1382529600" } }
-        %ul#navigation
-          - menu_data.each do |link|
-            %li
-              %i.icons-star
-              =link_to link[:name], link[:url], class: link[:class]
+      .container
+        %h1#logo
+          =link_to "Lpl Gran Canaria", root_path
+        %nav
+          #countdown
+            Cuenta atrás
+            %span#time{ data: { time: "1382529600" } }
+          %ul#navigation
+            - menu_data.each do |link|
+              %li
+                %i.icons-star
+                =link_to link[:name], link[:url], class: link[:class]
 
-    =link_to u_enrollment_path, id: "tickets" do
-      #ticket-caption Entradas para <strong>Las Palmas Lan</strong> ya a la venta
-      %h2#ticket-title Compra tu entrada
-    #main-section
-      = yield
-      %footer#footer
-        #event-name
-          Las Palmas Lan 2013
-        #footer-links
-          =link_to "Aviso legal", rules_path
+    %section#tickets-section
+      =link_to u_enrollment_path, id: "tickets" do
+        #ticket-caption Entradas para <strong>Las Palmas Lan</strong> ya a la venta
+        %h2#ticket-title Compra tu entrada
+    %section#main-section
+      .container
+        = yield
+        %footer#footer
+          #event-name
+            Las Palmas Lan 2013
+          #footer-links
+            =link_to "Aviso legal", rules_path

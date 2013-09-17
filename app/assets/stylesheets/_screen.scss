@@ -2,6 +2,7 @@ h2 {
   @extend %fontRegular;
   font-size: 25px;
 }
+.container { @include container; }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -13,10 +14,9 @@ body {
 }
 
 #header {
-  @include container;
   padding-top: 35px;
   padding-bottom: 80px;
-  background-image:url('header-bg.png');
+  background:url('header-bg.png') repeat-x;
   #logo {
     @include span-columns(4,12);
     a { 
@@ -66,41 +66,43 @@ body {
     }
   }
 }
-#tickets {
-  @include container;
-  display: block;
-  @include icons-sprite(banner);
-  height: 250px;
-  #ticket-caption {
-    @include span-columns(6,12);
-    @include post(6);
-    text-align: center;
-    @include inline-block(top);
-    padding: 5px;
-    background-color: $captionBg;
-    color: $captionColor;
-    font-size: 18px;
-    @extend %fontLight;
-    text-transform: uppercase;
-    strong {
-      @extend %fontBold;
+#tickets-section {
+  background-color: $ticketsBg;
+  #tickets {
+    @include container;
+    display: block;
+    @include icons-sprite(banner);
+    height: 250px;
+    #ticket-caption {
+      @include span-columns(6,12);
+      @include post(6);
+      text-align: center;
+      @include inline-block(top);
+      padding: 5px;
+      background-color: $captionBg;
+      color: $captionColor;
+      font-size: 18px;
+      @extend %fontLight;
+      text-transform: uppercase;
+      strong {
+        @extend %fontBold;
+      }
     }
-  }
-  #ticket-title {
-    line-height: 60px;
-    margin-top: 30px;
-    @include span-columns(5,12);
-    font-size: 50px;
-    @extend %fontRegular;
-    color: $ticketTitle;
-    text-transform: uppercase;
+    #ticket-title {
+      line-height: 60px;
+      margin-top: 30px;
+      @include span-columns(5,12);
+      font-size: 50px;
+      @extend %fontRegular;
+      color: $ticketTitle;
+      text-transform: uppercase;
+    }
   }
 }
 #main-section {
-  @include container;
-  background-image:url(background.png);
-  background-repeat: no-repeat;
-  background-position: center bottom;
+  background-image: url(background.png);
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 
 #footer {
