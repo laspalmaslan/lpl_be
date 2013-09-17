@@ -5,7 +5,7 @@
         %i.icon-bullhorn
         Noticias
       %span#news-title-link
-        %span ver todos
+        %span Ver todos
         %i.icon-chevron-right
   %ul#news
     -@news.each do |notice|
@@ -22,7 +22,7 @@
         %i.icon-trophy
         Torneos
       %span#tournaments-title-link
-        %span ver todos
+        %span Ver todos
         %i.icon-chevron-right
   %ul#tournaments
     -@tournaments.each do |tournament|
@@ -31,7 +31,7 @@
           = image_tag tournament.image.url
           .tournament-title= tournament.game
 %section#where-section
-  %h2#where-title= link_to "¿Dóde se celebra la Lpl 2012?", "http://goo.gl/maps/uTdMf"
+  %h2#where-title= link_to "¿Dónde se celebra la Lpl 2012?", "http://goo.gl/maps/uTdMf"
 %section#contact-section
   %h2#contact-title= link_to "¿Quieres patrocinar el evento? Contactanos", "#"
 %section#twitter-section

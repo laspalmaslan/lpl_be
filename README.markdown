@@ -13,7 +13,7 @@ sudo apt-get install postgresql-9.1 libpq-dev
 ```
 ###Install phantom.js:
 
-* [Dounload phantomjs](https://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2)
+* [Download phantomjs](https://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2)
 * `tar jxf path/to/filename.tar.bz2`
 * `mv path/to/uncompressed_folder ~/.phantomjs`
 * Add this line `export PATH="~/.phantomjs/bin/:$PATH"` to ~/.bash_profile or ~/.bashrc files
