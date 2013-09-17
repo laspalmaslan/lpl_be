@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "create post" do
   before  do
     admin = FactoryGirl.create :admin 
-    login(admin)
+    log_in(admin)
     visit new_post_path
     fill_in "post_title", :with => "Test"
     find('input[type="submit"]').click

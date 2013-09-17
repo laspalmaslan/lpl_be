@@ -7,7 +7,7 @@ describe "Check the edition" do
     event = FactoryGirl.create :event
     @day.events << event
     @admin = FactoryGirl.create :admin
-    login(@admin)
+    log_in(@admin)
     visit edit_manage_calendar_path(@day.id)
     select '2013', :from => 'day_day_date_1i'
     select 'February', :from => 'day_day_date_2i'

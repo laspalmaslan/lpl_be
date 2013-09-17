@@ -7,7 +7,7 @@ describe "check the event list" do
     event = FactoryGirl.create :event
     @day.events << event
     @admin = FactoryGirl.create :admin
-    login(@admin)
+    log_in(@admin)
     visit manage_calendars_path 
   end
   it "check day creation" do

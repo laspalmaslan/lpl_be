@@ -8,7 +8,7 @@ describe "Check delete day acction" do
     @day.events << event
     @admin = FactoryGirl.create :admin
     @count = Day.count
-    login(@admin)
+    log_in(@admin)
     visit manage_calendars_path()
     page.evaluate_script('window.confirm = function() { return true; }')
     find(".btn-danger").click

@@ -4,7 +4,7 @@ describe "edit post" do
   before do
     post = FactoryGirl.create :post
     admin = FactoryGirl.create :admin 
-    login(admin)
+    log_in(admin)
     visit edit_post_path(post)
     fill_in "post_title", :with => "Change to test"
     find('input[type="submit"]').click
