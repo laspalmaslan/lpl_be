@@ -1,8 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
-# ckecbox ckecked count
 window.checkboxValidation = ->
   selected_pc = $(".pc_games :input:checked").length
   if selected_pc > 1
@@ -16,9 +11,22 @@ window.checkboxValidation = ->
     $('.video_games :input').removeAttr('disabled')
 
 $ ->
+  $('body').on 'touchstart.dropdown', '.dropdown-menu', (e) ->
+    e.stopPropagation()
+  $(document).on 'click','.dropdown-menu a', ->
+    document.location = $(@).attr('href')
+
   $('.video_games :input').change ->
     checkboxValidation()
   $('.pc_games :input').change ->
     checkboxValidation()
   checkboxValidation()
+
+  $('#countdown #time').kkcountdown
+    dayText : 'D'
+    daysText : 'D'
+    hoursText : 'H'
+    minutesText : 'M'
+    secondsText : 'S'
+    displayZeroDays : false
 

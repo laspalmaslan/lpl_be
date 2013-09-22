@@ -1,0 +1,41 @@
+%section#news-section
+  %h2#news-title 
+    = link_to blog_path do
+      %span#news-title-text
+        %i.icon-bullhorn
+        Noticias
+      %span#news-title-link
+        %span Ver todos
+        %i.icon-chevron-right
+  %ul#news
+    -@news.each do |notice|
+      %li.notice
+        = link_to article_path(notice.id) do
+          .notice-info
+            .notice-date= notice.published_at
+            .notice-title= notice.title
+          %i.icon-chevron-right
+%section#tournaments-section
+  %h2#tournaments-title
+    = link_to competitions_path do
+      %span#tournaments-title-text
+        %i.icon-trophy
+        Torneos
+      %span#tournaments-title-link
+        %span Ver todos
+        %i.icon-chevron-right
+  %ul#tournaments
+    -@tournaments.each do |tournament|
+      %li.tournament
+        = link_to article_path(tournament.id) do
+          = image_tag tournament.image.url
+          .tournament-title= tournament.game
+%section#where-section
+  %h2#where-title= link_to "¿Dónde se celebra la Lpl 2012?", "http://goo.gl/maps/uTdMf"
+%section#contact-section
+  %h2#contact-title= link_to "¿Quieres patrocinar el evento? Contactanos", "#"
+%section#twitter-section
+  <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23LplGranCanaria" data-widget-id="374703181998985216">Tweets sobre "#LplGranCanaria"</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+%section#facebook-section
+  %h2#facebook-title /LasPalmasLan

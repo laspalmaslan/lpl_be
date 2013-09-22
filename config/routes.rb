@@ -17,7 +17,7 @@ Lpl::Application.routes.draw do
   match "inscripciones/game_new" => "users_enrollments#new_game", as: :u_game_enrollment_new
   match "inscripciones/game_create" => "users_enrollments#create_game", as: :u_game_enrollment_create, via: :post
 
-  match "normativa" => "static_pages#rules", as: :rules
+  match "normativa" => "general#rules", as: :rules
   match "calendar" => "calendar#index", as: :calendar
 
   # The priority is based upon order of creation:
@@ -52,5 +52,5 @@ Lpl::Application.routes.draw do
     match "game_enrollments/:id/upate" => "game_enrollments#update", as: :g_enrollment_update, via: :put
     match "game_enrollments/create" => "game_enrollments#create", as: :g_enrollment_create, via: :post
   end
-  root to: "blog#index"
+  root to: "general#dashboard"
 end

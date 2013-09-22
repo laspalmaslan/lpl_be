@@ -1,0 +1,31 @@
+#news-section {
+  @extend %whiteSection;
+  #news-title {
+    @extend %sectionHeader;
+  }
+  #news {
+    @extend %sectionListV;
+    .notice-info { @extend %info; }  
+  }
+}
+#tournaments-section {
+  @extend %whiteSection;
+  #tournaments-title { @extend %sectionHeader; }
+  #tournaments { @extend %sectionListH; }
+}
+#where-section {
+  @extend %whiteSection;
+  #where-title { @extend %sectionQuestion; }
+}
+#contact-section {
+  @extend %whiteSection;
+  #contact-title { @extend %sectionQuestion; }
+}
+#facebook-section {
+  @extend %whiteSection;
+  #facebook-title { @extend %sectionHeader; }
+}
+#twitter-section {
+  @extend %whiteSection;
+  #twitter-title { @extend %sectionHeader; }
+}
