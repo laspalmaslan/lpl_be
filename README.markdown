@@ -40,9 +40,9 @@ or you can see [travis ci service](https://travis-ci.org/laspalmaslan/lpl_be)
 
 we use enviroment variables for config services in production.
 
-AWS_ACCESS_KEY_ID:          amazon s3 credentials.
-AWS_SECRET_ACCESS_KEY:      amazon s3 credentials
-E-PASSWORD:                 email credentials
-E-USERNAME:                 email credentials
-S3_BUCKET_NAME:             amazon s3 bucket name
-SECRET_KEY:                 devise login secret token
+* AWS_ACCESS_KEY_ID:          amazon s3 credentials.
+* AWS_SECRET_ACCESS_KEY:      amazon s3 credentials
+* E-PASSWORD:                 email credentials
+* E-USERNAME:                 email credentials
+* S3_BUCKET_NAME:             amazon s3 bucket name
+* SECRET_KEY:                 devise login secret token
