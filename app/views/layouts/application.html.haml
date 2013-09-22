@@ -1,74 +1,35 @@
 !!! 5
 %html
   %head
-    %title Las Palmas LAN 2012
-    = stylesheet_link_tag    "application", :media => "all"
+    %title Las Palmas LAN 2013
+    = stylesheet_link_tag    "general", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     <meta name="google-site-verification" content="_rU5LQyvI3emLQxMTxIqjf3zs998kmHDp-IAfduun3U" />
   %body
-    .container
-      %header
-        #banner
-          #logo.well
-        %ul.nav.pull-left
-          %li
-            .link
-              =link_to root_path, class: (@current_controller == 'blog' ? "active with-tooltip" : "with-tooltip"), id: "Noticias", data: {placement: "bottom"}, rel: "tooltip", title: "Noticias" do
-                %i.icon-align-justify
-          %li
-            .link
-              =link_to calendar_path, class: (@current_controller == 'calendar' ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Programa" do
-                %i.icon-calendar
-              
-          %li
-            .link
-              =link_to competitions_path, class: (@current_controller == 'competitions' ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Competiciones" do
-                %i.icon-trophy
-          %li
-            .link
-              =link_to rules_path, class: ((@current_controller == 'static_pages' and @current_action == 'rules') ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Normativa" do
-                %i.icon-legal
-          %li
-            .link
-              =link_to u_enrollment_path, class: ((@current_controller == 'users_enrollments') ? "active with-tooltip" : "with-tooltip"), data: {placement: "bottom"}, rel: "tooltip", title: "Inscripciones" do
-                %i.icon-edit
-              
-        %ul.slide-control.pull-right
-          %li
-            %div.active 
-          %li
-            %div 
-          %li
-            %div 
-          %li
-            %div
+    %header#header
+      .container
+        %h1#logo
+          =link_to "Lpl Gran Canaria", root_path
+        %nav
+          #countdown
+            Cuenta atrás
+            %span#time{ data: { time: "1382529600" } }
+          %ul#navigation
+            - menu_data.each do |link|
+              %li
+                %i.icons-star
+                =link_to link[:name], link[:url], class: link[:class]
 
-        .slide.active
-          %span.slide-title
-            Talleres
-          %span.slide-content
-            Ruby on rails, Máquinas virtuales, Cheff, Modelado 3d ...
-        .slide
-          %span.slide-title
-            Actividades
-          %span.slide-content
-            Ciencia ficción, Paintball, Deportes extremos ...
-        .slide
-          %span.slide-title
-            Videojuegos
-          %span.slide-content
-            StarCraft2, Modern Warfare 3, FIFA2012, League of Legends ...
-        .slide
-          %span.slide-title
-            LAN Party
-          %span.slide-content
-            Streaming, Modding, Torneos, Consolas ...
-
-      -if flash[:notice].present?
-        .alert.alert-success
-          = flash[:notice]
-      -if flash[:error].present?
-        .alert.alert-error
-          = flash[:error] 
-      = yield
+    %section#tickets-section
+      =link_to u_enrollment_path, id: "tickets" do
+        #ticket-caption Entradas para <strong>Las Palmas Lan</strong> ya a la venta
+        %h2#ticket-title Compra tu entrada
+    %section#main-section
+      .container
+        = yield
+        %footer#footer
+          #event-name
+            Las Palmas Lan 2013
+          #footer-links
+            =link_to "Aviso legal", rules_path

@@ -1,0 +1,18 @@
+common: &common
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: postgresPassword
+
+development:
+  <<: *common
+  database: lpl_development
+
+test:
+  <<: *common
+  database: lpl_test
+
+production:
+  <<: *common
+  database: lpl_production
